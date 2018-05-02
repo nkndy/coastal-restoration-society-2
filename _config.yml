@@ -1,6 +1,5 @@
 ---
 title: Coastal Restoration Society
-snipcart_api_key: ''
 timezone: UTC
 collections:
   donations:
@@ -33,6 +32,7 @@ defaults:
     price: 0.0
     sku: ''
     image: ''
+snipcart_api_key: ''
 permalink: pretty
 email: info@coastalrestoration.com
 description: Write an awesome description for your new site here. You can edit this
