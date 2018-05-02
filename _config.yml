@@ -30,7 +30,6 @@ defaults:
   values:
     layout: donation
     permalink: "/donations/:title/"
-    name: ''
     price: 0.0
     sku: ''
     image: ''
