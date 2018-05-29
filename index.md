@@ -1,4 +1,4 @@
 ---
 title: Welcome To Coastal Restoration Society
-layout: default
+layout: home
 ---
