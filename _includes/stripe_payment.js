@@ -40,6 +40,23 @@ card.addEventListener('change', function(event) {
 });
 
 // Handle form submission.
+function submitForm(token) {
+    $.ajax({
+        url: 'https://wt-b9fa931cbbfbac80477a7365ca8d3306-0.sandbox.auth0-extend.com/coastal-restoration-stripe',
+        type: 'POST',
+        data: {
+          stripeToken: token.id,
+          email: 'test@test.com'
+        }
+    }).then(function(stripeCustomer) {
+      console.log('success');
+    }).fail(function(e) {
+      $('.pay').text('Buy');
+      alert('There was an error processing the payment. Please try again.')
+    });
+  }
+
+//create a token
 var form = document.getElementById('payment-form');
 form.addEventListener('submit', function(event) {
   event.preventDefault();
@@ -51,7 +68,7 @@ form.addEventListener('submit', function(event) {
       errorElement.textContent = result.error.message;
     } else {
       // Send the token to your server.
-      stripeTokenHandler(result.token);
+      submitForm(result.token);
     }
   });
 });
