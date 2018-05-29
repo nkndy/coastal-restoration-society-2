@@ -22,7 +22,10 @@ layout: home
   <button>Submit Payment</button>
 </form>
 
-<style>
+<label for="card-element">Card</label>
+<div id="card-element"></div>
+
+<!-- <style>
 /**
  * The CSS shown here will not be introduced in the Quickstart guide, but shows
  * how you can use CSS to style your Element's container.
@@ -49,4 +52,4 @@ layout: home
 .StripeElement--webkit-autofill {
   background-color: #fefde5 !important;
 }
-</style>
+</style> -->
