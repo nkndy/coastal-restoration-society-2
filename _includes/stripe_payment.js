@@ -41,23 +41,20 @@ card.addEventListener('change', function(event) {
 
 // Handle form submission.
 function submitForm(token) {
+  // console.log(token)
     $.ajax({
         url: 'https://wt-b9fa931cbbfbac80477a7365ca8d3306-0.sandbox.auth0-extend.com/coastal-restoration-stripe',
         type: 'POST',
         data: {
-          stripeToken: token.id,
+          stripeToken: token,
           email: 'test@test.com',
-          // name: 'Nick',
-          city: 'Kelowna',
-          state: 'BC',
-          zip: 'V0R2ZO'
         }
     }).then(function(stripeCustomer) {
       console.log('success');
       console.log(stripeCustomer);
     }).fail(function(e) {
       $('.pay').text('Buy');
-      alert('There was an error processing the payment. Please try again.')
+      console.log('There was an error processing the payment. Please try again.');
     });
   }
 

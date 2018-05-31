@@ -22,9 +22,6 @@ layout: home
   <button>Submit Payment</button>
 </form>
 
-<label for="card-element">Card</label>
-<div id="card-element"></div>
-
 <!-- <style>
 /**
  * The CSS shown here will not be introduced in the Quickstart guide, but shows
