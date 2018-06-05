@@ -2,15 +2,16 @@
 layout: default
 ---
 
-
-<div id="pagepiling">
-	<div class="section" style="background-color: red;"><div class="container-fluid">{% include portal_page_one.html %}</div></div>
-	<div class="section" style="background-color: blue;"><div class="container-fluid">{% include portal_page_two.html %}</div></div>
-	<div class="section" style="background-color: green;"><div class="container-fluid">{% include portal_page_three.html %}</div></div>
-</div>
+<div id="left-arrow">Left</div>
+<div id="right-arrow">Right</div>
+<section id="pagepiling">
+	<section class="section" style="background-color: red;"><div class="container-fluid">{% include portal_page_one.html %}</div></section>
+	<section class="section" style="background-color: blue;"><div class="container-fluid">{% include portal_page_two.html %}</div></section>
+	<section class="section" style="background-color: green;"><div class="container-fluid">{% include portal_page_three.html %}</div></section>
+</section>
 
 <script type="text/javascript">
-$(window).load(function() {
+$(document).ready(function() {
 	$('#pagepiling').pagepiling({
     direction: 'horizontal',
     navigation: false

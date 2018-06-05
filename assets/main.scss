@@ -3,3 +3,15 @@
 ---
 
 // @import "minima";
+
+#left-arrow,
+#right-arrow {
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#right-arrow {
+  right: 0;
+}
