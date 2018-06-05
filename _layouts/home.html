@@ -2,33 +2,18 @@
 layout: default
 ---
 
-<div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
 
-  {{ content }}
-
-  {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
-
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-  {%- endif -%}
-
+<div id="pagepiling">
+	<div class="section" style="background-color: red;"><div class="container-fluid">{% include portal_page_one.html %}</div></div>
+	<div class="section" style="background-color: blue;"><div class="container-fluid">{% include portal_page_two.html %}</div></div>
+	<div class="section" style="background-color: green;"><div class="container-fluid">{% include portal_page_three.html %}</div></div>
 </div>
+
+<script type="text/javascript">
+$(window).load(function() {
+	$('#pagepiling').pagepiling({
+    direction: 'horizontal',
+    navigation: false
+  });
+});
+</script>
