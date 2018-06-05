@@ -14,7 +14,22 @@ layout: default
 $(document).ready(function() {
 	$('#pagepiling').pagepiling({
     direction: 'horizontal',
-    navigation: false
+    navigation: false,
+    afterRender: function(){
+      $('#left-arrow').addClass("disabled")
+    },
+    afterLoad: function(anchorLink, index){
+      if (index != 1) {
+        $('#left-arrow').removeClass("disabled")
+      } else if (index == 1) {
+        $('#left-arrow').addClass("disabled")
+      }
+      if (index != 3) {
+        $('#right-arrow').removeClass("disabled")
+      } else if (index == 3) {
+        $('#right-arrow').addClass("disabled")
+      }
+    },
   });
   $.fn.pagepiling.setAllowScrolling(false);
 });
