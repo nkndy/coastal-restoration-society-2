@@ -3,7 +3,6 @@ title: Welcome To Coastal Restoration Society
 layout: home
 ---
 
-
 <!-- <button class="pay">Pay</button> -->
 
 <form action="/charge" method="post" id="payment-form">
