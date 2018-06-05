@@ -5,9 +5,9 @@ layout: default
 <div id="left-arrow">Left</div>
 <div id="right-arrow">Right</div>
 <section id="pagepiling">
-	<section class="section" style="background-color: red;"><div class="container-fluid">{% include portal_page_one.html %}</div></section>
-	<section class="section" style="background-color: blue;"><div class="container-fluid">{% include portal_page_two.html %}</div></section>
-	<section class="section" style="background-color: green;"><div class="container-fluid">{% include portal_page_three.html %}</div></section>
+	<section class="section portal-page one" style="background-color: red;"><div class="container-fluid">{% include portal_page_one.html %}</div></section>
+	<section class="section portal-page two" style="background-color: blue;"><div class="container-fluid">{% include portal_page_two.html %}</div></section>
+	<section class="section portal-page three" style="background-color: green;"><div class="container-fluid">{% include portal_page_three.html %}</div></section>
 </section>
 
 <script type="text/javascript">
@@ -16,5 +16,12 @@ $(document).ready(function() {
     direction: 'horizontal',
     navigation: false
   });
+  $.fn.pagepiling.setAllowScrolling(false);
+});
+$('#left-arrow').click(function() {
+  $.fn.pagepiling.moveSectionUp();
+});
+$('#right-arrow').click(function() {
+  $.fn.pagepiling.moveSectionDown();
 });
 </script>
