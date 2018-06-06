@@ -41,28 +41,36 @@ card.addEventListener('change', function(event) {
 
 // Handle form submission.
 function submitForm(token) {
-  // console.log(token)
+  console.log($('#FormControlInputName').val());
+  console.log($('#FormControlInputCompany').val());
+  console.log($('#FormControlInputPhone').val());
     $.ajax({
         url: 'https://wt-b9fa931cbbfbac80477a7365ca8d3306-0.sandbox.auth0-extend.com/coastal-restoration-stripe',
         type: 'POST',
         data: {
           stripeToken: token,
-          email: 'test@test.com',
+          email: $('#FormControlInputEmail').val(),
+          metadata: {
+            "name": $('#FormControlInputName').val(),
+            "company_name": $('#FormControlInputCompany').val(),
+            "phone": $('#FormControlInputPhone').val()
+          }
         }
     }).then(function(stripeCustomer) {
-      console.log('success');
+      $('#payment-submit').text("success");
       console.log(stripeCustomer);
     }).fail(function(e) {
-      $('.pay').text('Buy');
-      console.log('There was an error processing the payment. Please try again.');
+      $('#payment-submit').text(e.responseJSON.message);
     });
   }
 
 //create a token
 var form = document.getElementById('payment-form');
-form.addEventListener('submit', function(event) {
+var button = document.getElementById('payment-submit')
+button.addEventListener('click', function(event) {
   event.preventDefault();
-
+  console.log('pressed')
+  $('#payment-submit').text("spinner");
   stripe.createToken(card).then(function(result) {
     if (result.error) {
       // Inform the user if there was an error.

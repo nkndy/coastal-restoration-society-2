@@ -1,13 +1,15 @@
-<div class="col-xl-6 stripe--payment-form">
+<div class="col-lg-10 col-xl-6 stripe--payment-form">
   <div class="row no-gutters">
-    <div class="col-xl-6">
-      <h4>You are Donating:</h4>
-      <p>Donation Title</p>
+    <div class="col-xl-6 align-self-end">
+      <p class="text-uppercase">You are a:</p>
+      <h4 class="text-uppercase">Coastal Warrior</h4>
     </div>
     <div class="col-xl-5">
-      <h2>CARD DETAIL</h2>
+      <div class="py-5 text-center">
+        <h1 class="text-uppercase">Card Detail</h1>
+      </div>
     </div>
-    <div class="col-xl-1">
+    <div class="col-xl-1 align-self-end">
       <div>Spacer</div>
     </div>
   </div>
@@ -15,25 +17,37 @@
     <div class="col-xl-6">
       <img src="/uploads/p-bears.jpg" class="img-fluid" alt="Responsive image">
     </div>
-    <div class="col-xl-5 px-2">
+    <div class="col-xl-5 px-5">
       <form action="/charge" method="post" id="payment-form">
-        <div class="form-row">Your Name</div>
-        <div class="form-row">Company Name (Optional)</div>
-        <div class="form-row">Email</div>
+        <div class="form-row">
+            <label for="FormControlInputName"><small>Name:</small></label>
+            <input type="text" class="form-control" id="FormControlInputName" placeholder="Josh Temple" required>
+        </div>
+        <div class="form-row">
+            <label for="FormControlInputCompany"><small>Company: (Optional)</small></label>
+            <input type="text" class="form-control" id="FormControlInputCompany" placeholder="Coastal Restoration Society">
+        </div>
+        <div class="form-row">
+            <label for="FormControlInputEmail"><small>Email:</small></label>
+            <input type="email" class="form-control" id="FormControlInputEmail" placeholder="name@example.com" required>
+        </div>
+        <div class="form-row">
+            <label for="FormControlInputPhone"><small>Phone:</small></label>
+            <input type="tel" class="form-control" id="FormControlInputPhone" placeholder="+1(250)266-1987‬" required>
+        </div>
         <!-- <label for="card-element">
           Credit or debit card
         </label> -->
         <div class="form-row">
-          <div class="" id="card-element">
+          <label for="card-element"><small>Card:</small></label>
+          <div id="card-element">
             A Stripe Element will be inserted here.
           </div>
-          <div class="col-6">Postal Code</div>
-          <div class="col-6">CCV</div>
         </div>
 
         <!-- Used to display form errors. -->
         <div id="card-errors" role="alert"></div>
-      <button type="button" class="btn btn-light">Submit Payment</button>
+        <!-- <button class="btn btn-light">Submit Payment</button> -->
     </form>
     </div>
     <div class="col-xl-1">
@@ -41,14 +55,16 @@
     </div>
     </div>
     <div class="row no-gutters">
-      <div class="col-xl-6 d-flex justify-content-around">
-          <button type="button" class="btn btn-light">Level 1</button>
-          <button type="button" class="btn btn-light">Level 2</button>
-          <button type="button" class="btn btn-light">Level 3</button>
+      <div class="col-xl-6">
+        <div class="row">
+          <div class="col-xl-4"><button type="button" class="btn btn-light">Level 1</button></div>
+          <div class="col-xl-4"><button type="button" class="btn btn-light">Level 2</button></div>
+          <div class="col-xl-4"><button type="button" class="btn btn-light">Level 3</button></div>
+        </div>
       </div>
       <div class="col-xl-5">
-        <div>
-          <h1>Donate</h1>
+        <div class="py-5 text-center">
+          <h1 class="text-uppercase" id="payment-submit">Donate</h1>
         </div>
       </div>
       <div class="col-xl-1">
