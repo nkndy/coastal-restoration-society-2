@@ -1,51 +1,57 @@
-<div class="col-8 stripe--payment-form">
+<div class="col-xl-6 stripe--payment-form">
   <div class="row no-gutters">
-    <div class="col-6">
+    <div class="col-xl-6">
       <h4>You are Donating:</h4>
       <p>Donation Title</p>
     </div>
-    <div class="col-5">
+    <div class="col-xl-5">
       <h2>CARD DETAIL</h2>
     </div>
-    <div class="col-1">
-      Spacer
+    <div class="col-xl-1">
+      <div>Spacer</div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-6">
+  <div class="row no-gutters">
+    <div class="col-xl-6">
       <img src="/uploads/p-bears.jpg" class="img-fluid" alt="Responsive image">
     </div>
-    <div class="col-5">
+    <div class="col-xl-5 px-2">
       <form action="/charge" method="post" id="payment-form">
-      <div class="form-row">
+        <div class="form-row">Your Name</div>
+        <div class="form-row">Company Name (Optional)</div>
+        <div class="form-row">Email</div>
         <!-- <label for="card-element">
           Credit or debit card
         </label> -->
-        <div id="card-element">
-          A Stripe Element will be inserted here.
+        <div class="form-row">
+          <div class="" id="card-element">
+            A Stripe Element will be inserted here.
+          </div>
+          <div class="col-6">Postal Code</div>
+          <div class="col-6">CCV</div>
         </div>
 
         <!-- Used to display form errors. -->
         <div id="card-errors" role="alert"></div>
-      </div>
-
-      <button>Submit Payment</button>
+      <button type="button" class="btn btn-light">Submit Payment</button>
     </form>
     </div>
-    <div class="col-1">
-      Spacer
+    <div class="col-xl-1">
+      <div>Spacer</div>
     </div>
     </div>
-    <div class="row">
-      <div class="col-6 d-flex justify-content-around">
-          <button type="button" class="btn btn-light">Donation Level 1</button>
-          <button type="button" class="btn btn-light">Donation Level 2</button>
-          <button type="button" class="btn btn-light">Donation Level 3</button>
+    <div class="row no-gutters">
+      <div class="col-xl-6 d-flex justify-content-around">
+          <button type="button" class="btn btn-light">Level 1</button>
+          <button type="button" class="btn btn-light">Level 2</button>
+          <button type="button" class="btn btn-light">Level 3</button>
       </div>
-      <div class="col-5">
-        <div>Bottom</div>
+      <div class="col-xl-5">
+        <div>
+          <h1>Donate</h1>
+        </div>
       </div>
-      <div class="col-1">
+      <div class="col-xl-1">
         <div>Spacer</div>
       </div>
     </div>
