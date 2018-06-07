@@ -49,7 +49,7 @@ card.addEventListener('change', function(event) {
 // Handle form submission.
 function submitForm(token) {
     $.ajax({
-        url: 'https://wt-b9fa931cbbfbac80477a7365ca8d3306-0.sandbox.auth0-extend.com/coastal-restoration-stripe',
+        url: 'https://wt-b9fa931cbbfbac80477a7365ca8d3306-0.sandbox.auth0-extend.com/coastal-restoration',
         type: 'POST',
         data: {
           stripeToken: token,
@@ -63,13 +63,13 @@ function submitForm(token) {
         }
     }).then(function(stripeCustomer) {
       $('#payment-submit').text("success");
-      $('#spinner').one('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function(){
-        // Do something once!
-        console.log('this would show once');
+      $("#spinner.animated").fadeToggle(200, function(){
+        $("#spinner-success").fadeToggle(200);
       });
       console.log(stripeCustomer);
     }).fail(function(e) {
       $('#payment-submit').text(e.responseJSON.message);
+      $( "#payment-form" ).fadeToggle(350);
     });
   }
 
@@ -78,8 +78,8 @@ var form = document.getElementById('payment-form');
 var button = document.getElementById('payment-submit')
 button.addEventListener('click', function(event) {
   event.preventDefault();
-  $('#payment-submit').text("spinner");
-  $( "#payment-form" ).fadeOut(500, function() {
+  $( "#payment-form" ).fadeToggle(350, function(){
+    $( "#spinner" ).fadeToggle(350);
   });
   stripe.createToken(card).then(function(result) {
     if (result.error) {
