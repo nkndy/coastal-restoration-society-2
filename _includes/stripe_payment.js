@@ -62,9 +62,17 @@ function submitForm(token) {
           }
         }
     }).then(function(stripeCustomer) {
+      var slideDuration = 225;
       $('#payment-submit').text("success");
       $("#spinner.animated").fadeToggle(200, function(){
-        $("#spinner-success").fadeToggle(200);
+        $("#spinner-success").fadeToggle(200, function(){
+        $('#success-msg')
+          .stop(true, true)
+          .animate({
+            height:"toggle",
+            opacity:"toggle"
+          },1000);
+        })
       });
       console.log(stripeCustomer);
     }).fail(function(e) {
