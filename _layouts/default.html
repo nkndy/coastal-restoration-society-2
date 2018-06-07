@@ -13,7 +13,6 @@
     {% elsif depth == 3 %}{% assign base = '../..' %}
     {% elsif depth == 4 %}{% assign base = '../../..' %}{% endif %}
     {{ site.url }}
-    {{ base }}
 
     {%- comment -%}
       {%- include header.html -%}
