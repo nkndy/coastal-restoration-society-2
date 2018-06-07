@@ -18,28 +18,30 @@
       <img src="/uploads/p-bears.jpg" class="img-fluid" alt="Responsive image">
     </div>
     <div class="col-xl-5 px-5">
-      <form action="/charge" method="post" id="payment-form">
+      <form action="/charge" method="post" id="payment-form" autocomplete="on">
         <div class="form-row">
-            <label for="FormControlInputName"><small>Name:</small></label>
-            <input type="text" class="form-control" id="FormControlInputName" placeholder="Josh Temple" required>
+            <label for="FormControlInputName"><small class="text-muted">Name:</small></label>
+            <input type="text" class="form-control" id="FormControlInputName" placeholder="Josh Temple" required="required"/>
         </div>
         <div class="form-row">
-            <label for="FormControlInputCompany"><small>Company: (Optional)</small></label>
-            <input type="text" class="form-control" id="FormControlInputCompany" placeholder="Coastal Restoration Society">
+            <label for="FormControlInputCompany"><small class="text-muted">Company: (Optional)</small></label>
+            <input type="text" class="form-control" id="FormControlInputCompany" placeholder="Coastal Restoration Society"/>
         </div>
         <div class="form-row">
-            <label for="FormControlInputEmail"><small>Email:</small></label>
-            <input type="email" class="form-control" id="FormControlInputEmail" placeholder="name@example.com" required>
-        </div>
-        <div class="form-row">
-            <label for="FormControlInputPhone"><small>Phone:</small></label>
-            <input type="tel" class="form-control" id="FormControlInputPhone" placeholder="+1(250)266-1987‬" required>
+          <div class="col">
+            <label for="FormControlInputEmail"><small class="text-muted">Email:</small></label>
+            <input type="email" class="form-control" id="FormControlInputEmail" placeholder="name@example.com" required="required"/>
+          </div>
+          <div class="col">
+            <label for="FormControlInputPhone"><small class="text-muted">Phone:</small></label>
+            <input type="tel" class="form-control" id="FormControlInputPhone" placeholder="+1(250)266-1987‬" required="required"/>
+          </div>
         </div>
         <!-- <label for="card-element">
           Credit or debit card
         </label> -->
         <div class="form-row">
-          <label for="card-element"><small>Card:</small></label>
+          <label for="card-element"><small class="text-muted">Card:</small></label>
           <div id="card-element">
             A Stripe Element will be inserted here.
           </div>
@@ -49,6 +51,10 @@
         <div id="card-errors" role="alert"></div>
         <!-- <button class="btn btn-light">Submit Payment</button> -->
     </form>
+    <div id="spinner" class="animated"></div>
+    <!-- <div class="circle-loader">
+      <div class="checkmark draw"></div>
+    </div> -->
     </div>
     <div class="col-xl-1">
       <div>Spacer</div>
