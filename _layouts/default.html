@@ -4,17 +4,8 @@
   {%- include head.html -%}
 
   <body>
-
-    <!-- _includes/base.html -->
-    {% assign base = '' %}
-    {% assign depth = page.url | split: '/' | size | minus: 1 %}
-    {% if    depth <= 1 %}{% assign base = '.' %}
-    {% elsif depth == 2 %}{% assign base = '..' %}
-    {% elsif depth == 3 %}{% assign base = '../..' %}
-    {% elsif depth == 4 %}{% assign base = '../../..' %}{% endif %}
+    <p>{{ site.baseurl }}</p>
     <p>{{ site.url }}</p>
-    <p>{{ page.url }}</p>
-
     {%- comment -%}
       {%- include header.html -%}
     {%- endcomment -%}
