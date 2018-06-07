@@ -12,8 +12,8 @@
     {% elsif depth == 2 %}{% assign base = '..' %}
     {% elsif depth == 3 %}{% assign base = '../..' %}
     {% elsif depth == 4 %}{% assign base = '../../..' %}{% endif %}
-    {{ site.url }}
-    {{ page.url }}
+    <p>{{ site.url }}</p>
+    <p>{{ page.url }}</p>
 
     {%- comment -%}
       {%- include header.html -%}
