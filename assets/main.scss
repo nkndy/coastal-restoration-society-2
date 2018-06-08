@@ -7,35 +7,93 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
 }
 
+.text--alt-color-dark {
+  color: #7b8d9d;
+}
+.text--alt-color-darkest {
+  color: #545a61;
+}
 /**
  * The CSS shown here will not be introduced in the Quickstart guide, but shows
  * how you can use CSS to style your Element's container.
  */
+.portal-page {
+  background-color: #bec8cf;
+  h1 {
+    font-weight: 400;
+  }
+}
+
  .stripe--payment-form {
-   // use this property to animate
-   // transform: translate(-50vw);
    button {
      margin-top: 1em;
    }
    p {
-     margin: 0;
+     margin: 0 0 3px;
    }
    label {
      margin-bottom: 0;
    }
+   h1 {
+     letter-spacing: 11px;
+   }
+   h3 {
+     letter-spacing: 9px;
+     font-size: 1.85em;
+   }
+   h4 {
+     letter-spacing: 4px;
+   }
+   .b-right {
+     border-right: 1px solid white;
+   }
+   // use this property to animate
+   // transform: translate(-50vw);
+   form {
+     max-width: 100%;
+     padding-left: 2.35em;
+     padding-right: 2.35em;
+     label {
+       color: #bec8cf;
+     }
+     input {
+       text-transform: uppercase;
+       font-size: 1.1em;
+       &::placeholder {
+         color: #bec8cf;
+       }
+     }
+     .form-control {
+       padding: 5px 0 5px;
+       border: none;
+       border-bottom: 2px solid #7b8d9d;
+     }
+     #card-element {
+       padding: 8px 0 9px;       
+       border-bottom: 2px solid #7b8d9d;
+     }
+   }
+   .card-detail {
+     background-color: rgba(255, 255, 255, 0.75);
+   }
+   .payment-submit {
+     background-color: #7b8d9d;
+   }
    .form-row {
      margin-bottom: 1em;
    }
+   .form-col {
+     background-color: white;
+     min-height: 35em;
+     .row {
+       margin-bottom: 2em;
+     }
+   }
   .StripeElement {
     width: 100%;
-    background-color: white;
-    height: 40px;
-    padding: 10px 12px;
-    border-radius: 4px;
-    border: 1px solid transparent;
-    box-shadow: 0 1px 3px 0 #e6ebf1;
     -webkit-transition: box-shadow 150ms ease;
     transition: box-shadow 150ms ease;
   }
@@ -104,88 +162,3 @@ body {
     opacity: 0;
   }
 }
-
-// // Define vars we'll be using
-// $brand-success: #5cb85c;
-// $loader-size: 5em;
-// $check-height: $loader-size/2;
-// $check-width: $check-height/2;
-// $check-left: ($loader-size/6 + $loader-size/12);
-// $check-thickness: 3px;
-// $check-color: $brand-success;
-//
-// .circle-loader {
-//   margin-bottom: $loader-size/2;
-//   border: 1px solid rgba(0, 0, 0, 0.2);
-//   border-left-color: $check-color;
-//   animation: loader-spin 1.2s infinite linear;
-//   position: relative;
-//   display: inline-block;
-//   vertical-align: top;
-//   border-radius: 50%;
-//   width: $loader-size;
-//   height: $loader-size;
-// }
-//
-// .load-complete {
-//   -webkit-animation: none;
-//   animation: none;
-//   border-color: $check-color;
-//   transition: border 500ms ease-out;
-// }
-//
-// .checkmark {
-//   display: none;
-//
-//   &.draw:after {
-//     animation-duration: 800ms;
-//     animation-timing-function: ease;
-//     animation-name: checkmark;
-//     transform: scaleX(-1) rotate(135deg);
-//   }
-//
-//   &:after {
-//     opacity: 1;
-//     height: $check-height;
-//     width: $check-width;
-//     transform-origin: left top;
-//     border-right: $check-thickness solid $check-color;
-//     border-top: $check-thickness solid $check-color;
-//     content: '';
-//     left: $check-left;
-//     top: $check-height;
-//     position: absolute;
-//   }
-// }
-//
-// @keyframes loader-spin {
-//   0% {
-//     transform: rotate(0deg);
-//   }
-//   100% {
-//     transform: rotate(360deg);
-//   }
-// }
-//
-// @keyframes checkmark {
-//   0% {
-//     height: 0;
-//     width: 0;
-//     opacity: 1;
-//   }
-//   20% {
-//     height: 0;
-//     width: $check-width;
-//     opacity: 1;
-//   }
-//   40% {
-//     height: $check-height;
-//     width: $check-width;
-//     opacity: 1;
-//   }
-//   100% {
-//     height: $check-height;
-//     width: $check-width;
-//     opacity: 1;
-//   }
-// }

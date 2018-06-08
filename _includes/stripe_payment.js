@@ -20,15 +20,15 @@ var card = elements.create('card', {
       fontSmoothing: "antialiased",
 
       "::placeholder": {
-        color: "#BFAEF6"
+        color: "#bec8cf",
       },
       ":-webkit-autofill": {
         color: "#fce883"
       }
     },
     invalid: {
-      iconColor: "#FFC7EE",
-      color: "#FFC7EE"
+      iconColor: "#fce883",
+      color: "#fce883"
     }
   }
 });

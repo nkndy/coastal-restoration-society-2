@@ -1,0 +1,50 @@
+<div class="col-lg-12 col-xl-6 stripe--payment-form">
+  <div class="row no-gutters">
+    <div class="col-xl-7 align-self-end py-3">
+      <p class="text-uppercase pb-1">Thank you for Joining:</p>
+      <h4 class="text-uppercase text--alt-color-darkest">The Coastal Ambassador Program</h4>
+    </div>
+    <div class="col-xl-4">
+      <div class="py-5 text-center card-detail">
+        <h3 class="text-uppercase text--alt-color-dark">Card Detail</h3>
+      </div>
+    </div>
+  </div>
+  {% capture whale %}{{ 'uploads/whale.png' | absolute_url }}{% endcapture %}
+  <div class="row no-gutters image-row" style='background-image: url("{{ whale }}"); background-size: cover;'>
+    <div class="col-xl-4 offset-7 form-col">
+      {%- include stripe_form.html -%}
+      <div id="spinner" class="animated" style="display: none;"></div>
+      <div class="row"><div id="spinner-success" style="display: none;"></div></div>
+      <div class="row"><div id="success-msg" style="display: none;">Message</div></div>
+      <div class="circle-loader">
+        <div class="checkmark draw"></div>
+      </div>
+      </div>
+      <div class="col-xl-1">
+      </div>
+    </div>
+    <div class="row no-gutters">
+      <div class="col-xl-7">
+        <div class="row py-3 text-uppercase">
+          <div class="col-xl-4 b-right">
+            <h6>Tier:</h6>
+          </div>
+          <div class="col-xl-4 b-right text-uppercase">
+            <h6>Amount:</h6>
+          </div>
+          <div class="col-xl-4 b-right text-uppercase">
+            <h6>Recurring:</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4">
+        <div class="py-5 text-center payment-submit">
+          <h1 class="text-uppercase" id="payment-submit">Donate</h1>
+        </div>
+      </div>
+      <div class="col-xl-1">
+      </div>
+    </div>
+  </div>
+</div>

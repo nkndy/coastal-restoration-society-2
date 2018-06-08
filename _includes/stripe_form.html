@@ -1,83 +1,40 @@
-<div class="col-lg-10 col-xl-6 stripe--payment-form">
-  <div class="row no-gutters">
-    <div class="col-xl-6 align-self-end">
-      <p class="text-uppercase pb-1">Thank you for Joining:</p>
-      <h4 class="text-uppercase">The Coastal Ambassador Program</h4>
-    </div>
-    <div class="col-xl-5">
-      <div class="py-5 text-center">
-        <h1 class="text-uppercase">Card Detail</h1>
+<form action="/charge" method="post" id="payment-form" autocomplete="on" class="py-5 text-uppercase">
+  <div class="row">
+    <div class="col">
+      <label for="card-element"><small>Card:</small></label>
+      <div id="card-element">
       </div>
     </div>
-    <div class="col-xl-1 align-self-end">
-      <div>Spacer</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="FormControlInputName"><small>Name:</small></label>
+      <input type="text" class="form-control" id="FormControlInputName" placeholder="Josh Temple" required="required"/>
     </div>
   </div>
-  <div class="row no-gutters">
-    <div class="col-xl-6">
-      <img src="{{ 'uploads/p-bears.jpg' | absolute_url }}" class="img-fluid" alt="Responsive image">
+  <div class="row">
+    <div class="col">
+      <label for="FormControlInputCompany"><small>Company: (Optional)</small></label>
+      <input type="text" class="form-control" id="FormControlInputCompany" placeholder="Coastal Restoration Society"/>
     </div>
-    <div class="col-xl-5 d-flex px-5 align-self-center">
-      <form action="/charge" method="post" id="payment-form" autocomplete="on">
-        <div class="form-row">
-            <label for="FormControlInputName"><small class="text-muted">Name:</small></label>
-            <input type="text" class="form-control" id="FormControlInputName" placeholder="Josh Temple" required="required"/>
-        </div>
-        <div class="form-row">
-            <label for="FormControlInputCompany"><small class="text-muted">Company: (Optional)</small></label>
-            <input type="text" class="form-control" id="FormControlInputCompany" placeholder="Coastal Restoration Society"/>
-        </div>
-        <div class="form-row">
-          <div class="col">
-            <label for="FormControlInputEmail"><small class="text-muted">Email:</small></label>
-            <input type="email" class="form-control" id="FormControlInputEmail" placeholder="name@example.com" required="required"/>
-          </div>
-          <div class="col">
-            <label for="FormControlInputPhone"><small class="text-muted">Phone:</small></label>
-            <input type="tel" class="form-control" id="FormControlInputPhone" placeholder="+1(250)266-1987‬" required="required"/>
-          </div>
-        </div>
-        <!-- <label for="card-element">
-          Credit or debit card
-        </label> -->
-        <div class="form-row">
-          <label for="card-element"><small class="text-muted">Card:</small></label>
-          <div id="card-element">
-            A Stripe Element will be inserted here.
-          </div>
-        </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="FormControlInputPhone"><small>Phone:</small></label>
+      <input type="tel" class="form-control" id="FormControlInputPhone" placeholder="+1 (250) 266-1987‬" required="required"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="FormControlInputEmail"><small>Email:</small></label>
+      <input type="email" class="form-control" id="FormControlInputEmail" placeholder="name@example.com" required="required"/>
+    </div>
+  </div>
+  <!-- <label for="card-element">
+    Credit or debit card
+  </label> -->
 
-        <!-- Used to display form errors. -->
-        <div id="card-errors" role="alert"></div>
-        <!-- <button class="btn btn-light">Submit Payment</button> -->
-    </form>
-    <div id="spinner" class="animated" style="display: none;"></div>
-    <div class="row"><div id="spinner-success" style="display: none;"></div></div>
-    <div class="row"><div id="success-msg" style="display: none;">Message</div></div>
-    <!-- <div class="circle-loader">
-      <div class="checkmark draw"></div>
-    </div> -->
-    </div>
-    <div class="col-xl-1">
-      <div>Spacer</div>
-    </div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-xl-6">
-        <div class="row">
-          <div class="col-xl-4"><button type="button" class="btn btn-light">Level 1</button></div>
-          <div class="col-xl-4"><button type="button" class="btn btn-light">Level 2</button></div>
-          <div class="col-xl-4"><button type="button" class="btn btn-light">Level 3</button></div>
-        </div>
-      </div>
-      <div class="col-xl-5">
-        <div class="py-5 text-center">
-          <h1 class="text-uppercase" id="payment-submit">Donate</h1>
-        </div>
-      </div>
-      <div class="col-xl-1">
-        <div>Spacer</div>
-      </div>
-    </div>
-  </div>
-</div>
+  <!-- Used to display form errors. -->
+  <div id="card-errors" role="alert"></div>
+  <!-- <button class="btn btn-light">Submit Payment</button> -->
+</form>
