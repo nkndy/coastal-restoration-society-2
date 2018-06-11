@@ -42,7 +42,6 @@ body {
    }
    h3 {
      letter-spacing: 9px;
-     font-size: 1.85em;
    }
    h4 {
      letter-spacing: 4px;
@@ -61,7 +60,7 @@ body {
      }
      input {
        text-transform: uppercase;
-       font-size: 1.1em;
+       font-size: 0.75rem;
        &::placeholder {
          color: #bec8cf;
        }
@@ -69,11 +68,12 @@ body {
      .form-control {
        padding: 5px 0 5px;
        border: none;
-       border-bottom: 2px solid #7b8d9d;
+       border-bottom: 1px solid #7b8d9d;
+       border-radius: 0px;
      }
      #card-element {
-       padding: 8px 0 9px;       
-       border-bottom: 2px solid #7b8d9d;
+       padding: 8px 0 9px;
+       border-bottom: 1px solid #7b8d9d;
      }
    }
    .card-detail {
@@ -87,7 +87,7 @@ body {
    }
    .form-col {
      background-color: white;
-     min-height: 35em;
+     height: 31em;
      .row {
        margin-bottom: 2em;
      }
