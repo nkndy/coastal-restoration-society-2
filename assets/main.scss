@@ -28,6 +28,9 @@ body {
 }
 
  .stripe--payment-form {
+   small {
+     font-size: 60%;
+   }
    button {
      margin-top: 1em;
    }
