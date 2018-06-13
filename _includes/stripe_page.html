@@ -12,7 +12,7 @@
   </div>
   {% capture whale %}{{ 'uploads/whale.png' | absolute_url }}{% endcapture %}
   <div class="row no-gutters image-row" style='background-image: url("{{ whale }}"); background-size: cover;'>
-    <div class="col-xl-4 offset-7 form-col">
+    <div class="col-xl-4 offset-7 form-col d-flex">
       {%- include stripe_form.html -%}
       <div id="spinner" class="animated" style="display: none;"></div>
       <div class="row"><div id="spinner-success" style="display: none;"></div></div>

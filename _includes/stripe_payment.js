@@ -16,11 +16,11 @@ var card = elements.create('card', {
       color: "#aab7c4",
       fontWeight: 400,
       fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
-      fontSize: "16px",
       fontSmoothing: "antialiased",
-
+      fontSize: "12px",
       "::placeholder": {
         color: "#bec8cf",
+        textTransform: "uppercase",
       },
       ":-webkit-autofill": {
         color: "#fce883"
