@@ -28,6 +28,27 @@ body {
 }
 
  .stripe--payment-form {
+   h1 {
+     letter-spacing: 11px;
+   }
+   h3 {
+     letter-spacing: 9px;
+     font-weight: 400;
+   }
+   h4 {
+     letter-spacing: 4px;
+    margin-bottom: 0;
+    font-weight: 400;
+   }
+   h5 {
+     letter-spacing: 4px;
+      font-size: 1.1em;
+   }
+   h6 {
+      font-size: 0.65rem;
+      letter-spacing: 4px;
+      font-weight: 400;
+   }
    small {
      font-size: 60%;
    }
@@ -36,21 +57,18 @@ body {
    }
    p {
      margin: 0 0 3px;
+     letter-spacing: 4px;
+     font-size: 0.85rem;
    }
    label {
      margin-bottom: 0;
    }
-   h1 {
-     letter-spacing: 11px;
-   }
-   h3 {
-     letter-spacing: 9px;
-   }
-   h4 {
-     letter-spacing: 4px;
-   }
    .b-right {
      border-right: 1px solid white;
+     p {
+       color: #7b8d9d;
+       font-size: 1.025em;
+     }
    }
    // use this property to animate
    // transform: translate(-50vw);
