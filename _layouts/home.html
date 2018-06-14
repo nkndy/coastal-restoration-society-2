@@ -7,7 +7,6 @@ layout: default
 <section id="pagepiling">
 	<section class="section portal-page one"><div class="container-fluid">{% include portal_page_one.html %}</div></section>
 	<section class="section portal-page two"><div class="container-fluid">{% include portal_page_two.html %}</div></section>
-	<section class="section portal-page three"><div class="container-fluid">{% include portal_page_three.html %}</div></section>
 </section>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -23,9 +22,9 @@ $(document).ready(function() {
       } else if (index == 1) {
         $('#left-arrow').addClass("disabled")
       }
-      if (index != 3) {
+      if (index != 2) {
         $('#right-arrow').removeClass("disabled")
-      } else if (index == 3) {
+      } else if (index == 2) {
         $('#right-arrow').addClass("disabled")
       }
     },

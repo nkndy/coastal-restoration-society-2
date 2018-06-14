@@ -44,10 +44,7 @@ card.addEventListener('change', function(event) {
       return '<i class="fas fa-exclamation-triangle"></i> ' + event.error.message;
     });
     $( "#card-errors:hidden" ).fadeIn( 250 );
-    // $('#payment-submit').off('click');
   } else {
-    // $('#payment-submit').on('click');
-    $( "#card-errors" ).fadeOut( 250 );
     displayError.textContent = '';
   }
 });
@@ -92,17 +89,58 @@ var form = document.getElementById('payment-form');
 var button = document.getElementById('payment-submit')
 button.addEventListener('click', function(event) {
   event.preventDefault();
-  $( "#payment-form" ).fadeToggle(350, function(){
-    $( "#spinner" ).fadeToggle(350);
-  });
-  stripe.createToken(card).then(function(result) {
-    if (result.error) {
-      // Inform the user if there was an error.
-      var errorElement = document.getElementById('card-errors');
-      errorElement.textContent = result.error.message;
+  const isValidName = form[2].checkValidity();
+  const isValidPhone = form[4].checkValidity();
+  const isValidEmail = form[5].checkValidity();
+  var validates = [isValidName, isValidEmail, isValidPhone];
+  var isValid = false;
+  var validationMessage;
+  for (var i = 0; i < validates.length; i++) {
+    if (validates[i] === false){
+      validationMessage = i;
+      isValid = false;
+      break;
     } else {
-      // Send the token to your server.
-      submitForm(result.token);
+      isValid = true;
     }
-  });
+  }
+  if (isValid) {
+    stripe.createToken(card).then(function(result) {
+      if (result.error) {
+        // Inform the user if there was an error.
+        var errorElement = document.getElementById('card-errors');
+        errorElement.textContent = result.error.message;
+      } else {
+        // Send the token to your server.
+        submitForm(result.token);
+      }
+    });
+  } else {
+    var displayError = $("#card-errors");
+    switch(validationMessage) {
+      case 0:
+          // errorElement.textContent = "Let us know your name so we know who to thank!";
+          displayError.html(function(){
+            return '<i class="fas fa-exclamation-triangle"></i> Let us know your name so we know who to thank!';
+          });
+          $('#FormControlInputName').addClass("error");
+          $('label[for=FormControlInputName]').addClass("highlightError");
+          break;
+      case 1:
+          displayError.html(function(){
+            return '<i class="fas fa-exclamation-triangle"></i> Please add your phone number so we can thank you!';
+          });
+          $('#FormControlInputPhone').addClass("error");
+          $('label[for=FormControlInputPhone]').addClass("highlightError");
+          break;
+      case 3:
+          displayError.html(function(){
+            return '<i class="fas fa-exclamation-triangle"></i> Please add your email so you can recieve your tax receipt and other important info!';
+          });
+          $('#FormControlInputEmail').addClass("error");
+          $('label[for=FormControlInputEmail]').addClass("highlightError");
+          break;
+    }
+    $( "#card-errors:hidden" ).fadeIn( 250 );
+  }
 });

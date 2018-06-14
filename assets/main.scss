@@ -29,6 +29,14 @@ body {
   }
 }
 
+.error {
+  border-bottom: 1px solid $errors !important;
+}
+
+.highlightError {
+  color: $errors !important;
+}
+
  .stripe--payment-form {
    h1 {
      letter-spacing: 11px;
@@ -107,6 +115,10 @@ body {
    }
    .payment-submit {
      background-color: #7b8d9d;
+     #payment-submit{
+       margin-top: 0;
+       color: white;
+     }
    }
    .form-row {
      margin-bottom: 1em;
