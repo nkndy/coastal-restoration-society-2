@@ -44,7 +44,9 @@ card.addEventListener('change', function(event) {
       return '<i class="fas fa-exclamation-triangle"></i> ' + event.error.message;
     });
     $( "#card-errors:hidden" ).fadeIn( 250 );
+    // $('#payment-submit').off('click');
   } else {
+    // $('#payment-submit').on('click');
     $( "#card-errors" ).fadeOut( 250 );
     displayError.textContent = '';
   }
