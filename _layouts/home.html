@@ -9,7 +9,6 @@ layout: default
 	<section class="section portal-page two"><div class="container-fluid">{% include portal_page_two.html %}</div></section>
 	<section class="section portal-page three"><div class="container-fluid">{% include portal_page_three.html %}</div></section>
 </section>
-
 <script type="text/javascript">
 $(document).ready(function() {
 	$('#pagepiling').pagepiling({
@@ -32,6 +31,13 @@ $(document).ready(function() {
     },
   });
   $.fn.pagepiling.setAllowScrolling(false);
+	document.getElementById('fullscreen-button').addEventListener('click', () => {
+		if (screenfull.enabled) {
+			screenfull.request();
+		} else {
+			// Ignore or do something else
+		}
+	});
 });
 $('#left-arrow').click(function() {
   $.fn.pagepiling.moveSectionUp();
