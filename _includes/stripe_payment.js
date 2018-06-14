@@ -33,6 +33,20 @@ var card = elements.create('card', {
   }
 });
 
+//listen for change in fields and remove error classes
+var nameInput = document.getElementById('FormControlInputName');
+var phoneInput = document.getElementById('FormControlInputPhone');
+var emailInput = document.getElementById('FormControlInputEmail');
+nameInput.addEventListener('change', function(event) {
+  $("#card-errors").fadeToggle(250);
+});
+phoneInput.addEventListener('change', function(event) {
+  $("#card-errors").fadeToggle(250);
+});
+emailInput.addEventListener('change', function(event) {
+  $("#card-errors").fadeToggle(250);
+});
+
 // Add an instance of the card Element into the `card-element` <div>.
 card.mount('#card-element');
 
