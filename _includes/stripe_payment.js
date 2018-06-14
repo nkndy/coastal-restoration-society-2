@@ -40,8 +40,12 @@ card.mount('#card-element');
 card.addEventListener('change', function(event) {
   var displayError = document.getElementById('card-errors');
   if (event.error) {
-    displayError.textContent = event.error.message;
+    $("#card-errors").html(function(){
+      return '<i class="fas fa-exclamation-triangle"></i> ' + event.error.message;
+    });
+    $( "#card-errors:hidden" ).fadeIn( 250 );
   } else {
+    $( "#card-errors" ).fadeOut( 250 );
     displayError.textContent = '';
   }
 });
