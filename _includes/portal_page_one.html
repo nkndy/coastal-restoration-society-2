@@ -1,1 +1,4 @@
-<div>1</div>
+{% capture map %}{{ 'uploads/Clay-map-tester.png' | absolute_url }}{% endcapture %}
+<div class="row" style='background-image: url("{{ map }}"); background-size: cover; height: 100vh;'>
+  hi
+</div>
