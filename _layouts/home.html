@@ -34,10 +34,10 @@ $(document).ready(function() {
 	document.getElementById('fullscreen-button').addEventListener('click', () => {
 		if (screenfull.enabled) {
 			screenfull.request();
-			$('fullscreen-button').hide();
 		} else {
 			// Ignore or do something else
 		}
+		$('#fullscreen-button').hide();
 	});
 });
 $('#left-arrow').click(function() {
