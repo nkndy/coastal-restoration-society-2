@@ -37,14 +37,17 @@ var card = elements.create('card', {
 var nameInput = document.getElementById('FormControlInputName');
 var phoneInput = document.getElementById('FormControlInputPhone');
 var emailInput = document.getElementById('FormControlInputEmail');
-nameInput.addEventListener('change', function(event) {
-  $("#card-errors").fadeToggle(250);
+nameInput.addEventListener('input', function(event) {
+  $('#FormControlInputName').removeClass("error");
+  $('label[for=FormControlInputName]').removeClass("highlightError");
 });
-phoneInput.addEventListener('change', function(event) {
-  $("#card-errors").fadeToggle(250);
+phoneInput.addEventListener('input', function(event) {
+  $('#FormControlInputPhone').removeClass("error");
+  $('label[for=FormControlInputPhone]').removeClass("highlightError");
 });
-emailInput.addEventListener('change', function(event) {
-  $("#card-errors").fadeToggle(250);
+emailInput.addEventListener('input', function(event) {
+  $('#FormControlInputEmail').removeClass("error");
+  $('label[for=FormControlInputEmail]').removeClass("highlightError");
 });
 
 // Add an instance of the card Element into the `card-element` <div>.
@@ -54,12 +57,16 @@ card.mount('#card-element');
 card.addEventListener('change', function(event) {
   var displayError = document.getElementById('card-errors');
   if (event.error) {
+    $('#card-element').addClass("error");
+    $('label[for=card-element]').addClass("highlightError");
     $("#card-errors").html(function(){
       return '<i class="fas fa-exclamation-triangle"></i> ' + event.error.message;
     });
     $( "#card-errors:hidden" ).fadeIn( 250 );
   } else {
     displayError.textContent = '';
+    $('#card-element').removeClass("error");
+    $('label[for=card-element]').removeClass("highlightError");
   }
 });
 
@@ -105,10 +112,13 @@ button.addEventListener('click', function(event) {
   event.preventDefault();
   const isValidName = form[2].checkValidity();
   const isValidPhone = form[4].checkValidity();
+  console.log(form[4].checkValidity());
+  console.log(form[4]);
   const isValidEmail = form[5].checkValidity();
-  var validates = [isValidName, isValidEmail, isValidPhone];
+  var validates = [isValidName, isValidPhone, isValidEmail];
   var isValid = false;
   var validationMessage;
+  console.log(validates);
   for (var i = 0; i < validates.length; i++) {
     if (validates[i] === false){
       validationMessage = i;
@@ -147,7 +157,7 @@ button.addEventListener('click', function(event) {
           $('#FormControlInputPhone').addClass("error");
           $('label[for=FormControlInputPhone]').addClass("highlightError");
           break;
-      case 3:
+      case 2:
           displayError.html(function(){
             return '<i class="fas fa-exclamation-triangle"></i> Please add your email so you can recieve your tax receipt and other important info!';
           });
