@@ -70,12 +70,12 @@ card.addEventListener('change', function(event) {
   }
 });
 
-function retry() {
-
-}
-
-var resetForm = document.getElementById('reset-form');
-resetForm.addEventListener("click", retry);
+// function retry() {
+//
+// }
+//
+// var resetForm = document.getElementById('reset-form');
+// resetForm.addEventListener("click", retry);
 
 // Handle form submission.
 function submitForm(token) {
