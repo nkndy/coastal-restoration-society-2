@@ -62,7 +62,7 @@ card.addEventListener('change', function(event) {
     $("#card-errors").html(function(){
       return '<i class="fas fa-exclamation-triangle"></i> ' + event.error.message;
     });
-    $( "#card-errors:hidden" ).fadeIn( 250 );
+    $( "#card-errors:hidden" ).fadeIn(250);
   } else {
     displayError.textContent = '';
     $('#card-element').removeClass("error");
@@ -87,21 +87,15 @@ function submitForm(token) {
         }
     }).then(function(stripeCustomer) {
       var slideDuration = 225;
-      $('#payment-submit').text("success");
-      $("#spinner.animated").fadeToggle(200, function(){
-        $("#spinner-success").fadeToggle(200, function(){
-        $('#success-msg')
-          .stop(true, true)
-          .animate({
-            height:"toggle",
-            opacity:"toggle"
-          },1000);
-        })
+      $('#spinner.animated').fadeToggle(250, function(){
+        $('#success-container').fadeToggle(50, function(){
+          $('#success-msg').html('Your contributions keep our technicians on the ground, our boats on the water, and our helicopters in the air removing toxic pollutants from local wildlife habitat. You will recieve an email with additional information about your donation. Please respond directly with any questions you may have about your contribution.<h4 class="pt-4">Thank you! and welcome to the cleanup.</h4>');
+          $('#success-msg').fadeToggle(250);
+        });
       });
       console.log(stripeCustomer);
     }).fail(function(e) {
-      $('#payment-submit').text(e.responseJSON.message);
-      $( "#payment-form" ).fadeToggle(350);
+      $('#status-msg').text(e.responseJSON.message);
     });
   }
 
@@ -112,13 +106,10 @@ button.addEventListener('click', function(event) {
   event.preventDefault();
   const isValidName = form[2].checkValidity();
   const isValidPhone = form[4].checkValidity();
-  console.log(form[4].checkValidity());
-  console.log(form[4]);
   const isValidEmail = form[5].checkValidity();
   var validates = [isValidName, isValidPhone, isValidEmail];
   var isValid = false;
   var validationMessage;
-  console.log(validates);
   for (var i = 0; i < validates.length; i++) {
     if (validates[i] === false){
       validationMessage = i;
@@ -136,6 +127,11 @@ button.addEventListener('click', function(event) {
         errorElement.textContent = result.error.message;
       } else {
         // Send the token to your server.
+        $('#payment-form').fadeToggle(250, function(){
+          $('#status-container').fadeToggle(50, function(){
+            $("#spinner.animated").fadeToggle(200, function(){});
+          })
+        });
         submitForm(result.token);
       }
     });

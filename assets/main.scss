@@ -170,18 +170,32 @@ body {
   right: 0;
 }
 
-#spinner-success {
-  width: 40px;
-  height: 40px;
-  margin: 1em auto;
-  background-color: green;
-  border-radius: 100%;
+#success-container {
+  margin: 0 auto;
+  .spinner-success {
+    width: 40px;
+    height: 40px;
+    margin: 5em auto 1em;
+    background-color: #C8E087;
+    border-radius: 100%;
+    text-align: center;
+    i {
+      color: white;
+      font-size: 1.5em;
+      margin-top: 0.55rem;
+    }
+  }
+  #success-msg {
+    color: #7b8d9d;
+    font-size: 0.4em;
+    letter-spacing: 1px;
+  }
 }
 
 #spinner {
   width: 40px;
   height: 40px;
-  margin: 1em auto;
+  margin: 5em auto;
   background-color: #000;
   border-radius: 100%;
   &.animated {

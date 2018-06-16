@@ -14,42 +14,43 @@
   <div class="row no-gutters image-row" style='background-image: url("{{ whale }}"); background-size: cover;'>
     <div class="col-xl-4 offset-7 form-col d-flex">
       {%- include stripe_form.html -%}
-      <div id="spinner" class="animated" style="display: none;"></div>
-      <div class="row"><div id="spinner-success" style="display: none;"></div></div>
-      <div class="row"><div id="success-msg" style="display: none;">Message</div></div>
-      <div class="circle-loader">
-        <div class="checkmark draw"></div>
+      <div id="status-container" style="display: none;">
+        <div id="spinner" class="animated" style="display: none;"></div>
+        <div class="p-4" id="status-msg" style="display: none;"></div>
       </div>
-      </div>
-      <div class="col-xl-1">
+      <div id="success-container" style="display: none;">
+        <div class="spinner-success"><i class="fas fa-check"></i></div>
+        <div class="p-4" id="success-msg" style="display: none;"></div>
       </div>
     </div>
-    <div class="row no-gutters">
-      <div class="col-xl-7">
-        <div class="row py-3 text-uppercase">
-          <div class="col-xl-4 b-right">
-            <h6>Tier:</h6>
-            <p id="tier">Silver</p>
-          </div>
-          <div class="col-xl-4 b-right text-uppercase">
-            <h6>Amount:</h6>
-            <p id="amount">$1500</p>
-          </div>
-          <div class="col-xl-4 b-right text-uppercase">
-            <h6>Recurring:</h6>
-            <p id="subscription">Annually</p>
-          </div>
+    <div class="col-xl-1">
+    </div>
+  </div>
+  <div class="row no-gutters">
+    <div class="col-xl-7">
+      <div class="row py-3 text-uppercase">
+        <div class="col-xl-4 b-right">
+          <h6>Tier:</h6>
+          <p id="tier">Silver</p>
+        </div>
+        <div class="col-xl-4 b-right text-uppercase">
+          <h6>Amount:</h6>
+          <p id="amount">$1500</p>
+        </div>
+        <div class="col-xl-4 b-right text-uppercase">
+          <h6>Recurring:</h6>
+          <p id="subscription">Annually</p>
         </div>
       </div>
-      <div class="col-xl-4">
-        <div class="py-4 text-center payment-submit">
-          <button class="text-uppercase" id="payment-submit" type="submit" form='#payment-form'><h3>Donate</h3></button>
-        </div>
-        <div id="card-errors" role="alert" class="py-4">
-        </div>
+    </div>
+    <div class="col-xl-4">
+      <div class="py-4 text-center payment-submit">
+        <button class="text-uppercase" id="payment-submit" type="submit" form='#payment-form'><h3>Donate</h3></button>
       </div>
-      <div class="col-xl-1">
+      <div id="card-errors" role="alert" class="py-4">
       </div>
+    </div>
+    <div class="col-xl-1">
     </div>
   </div>
 </div>
