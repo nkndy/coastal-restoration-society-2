@@ -70,12 +70,17 @@ card.addEventListener('change', function(event) {
   }
 });
 
-// function retry() {
-//
-// }
-//
-// var resetForm = document.getElementById('reset-form');
-// resetForm.addEventListener("click", retry);
+function retry() {
+  $('#status-container').fadeToggle(50, function() {
+    card.clear();
+    $('#payment-form').fadeToggle(200);
+    $('#reset-form').fadeToggle(1);
+    $('#transaction-fail').fadeToggle(1);
+  });
+}
+
+var resetForm = document.getElementById('reset-form');
+resetForm.addEventListener("click", retry);
 
 // Handle form submission.
 function submitForm(token) {
@@ -95,7 +100,7 @@ function submitForm(token) {
     }).then(function(stripeCustomer) {
       $('#status-container').fadeToggle(250, function(){
         $('#success-container').fadeToggle(50, function(){
-          $('#success-msg').html('Your contributions keep our technicians on the ground, our boats on the water, and our helicopters in the air removing toxic pollutants from local wildlife habitat. You will recieve an email with additional information about your donation. Please respond directly with any questions you may have about your contribution.<h4 class="pt-4 text-center text-uppercase">Thank you! and welcome to the cleanup.</h4>');
+          $('#success-msg').html(' You will recieve an email with additional information about your donation. Please respond directly with any questions you may have about your contribution.<h4 class="pt-4 text-center text-uppercase">Thank you!</h4><h6 class="text-center text-uppercase">welcome to the cleanup.</h6>');
           $('#success-msg').fadeToggle(250);
         });
       });
@@ -103,7 +108,8 @@ function submitForm(token) {
     }).fail(function(e) {
       $('#spinner.animated').fadeToggle(200, function(){
         $('#transaction-fail').fadeToggle(50, function(){
-          $('#status-msg').html('<h4 class="text-center text-uppercase">Oh no!</h4>' + '<h6 class="text-center pt-3 text-uppercase">' + e.responseJSON.message + '</h6>' + '<div id="reset-form" class="text-center pt-1"><i class="fas fa-redo-alt fa-2x"></i></div>');
+          $('#status-msg').html('<h4 class="text-center text-uppercase">Oh no!</h4>' + '<h6 class="text-center pt-3 text-uppercase">' + e.responseJSON.message + '</h6>');
+          $('#reset-form').fadeToggle(50);
         });
       });
     });
