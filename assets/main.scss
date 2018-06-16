@@ -172,6 +172,7 @@ body {
 
 #success-container {
   margin: 0 auto;
+  color: #7b8d9d;
   .spinner-success {
     width: 40px;
     height: 40px;
@@ -186,21 +187,40 @@ body {
     }
   }
   #success-msg {
-    color: #7b8d9d;
-    font-size: 0.4em;
+    font-size: 0.55em;
     letter-spacing: 1px;
   }
 }
 
-#spinner {
-  width: 40px;
-  height: 40px;
-  margin: 5em auto;
-  background-color: #000;
-  border-radius: 100%;
-  &.animated {
-    -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
-    animation: sk-scaleout 1.0s infinite ease-in-out;
+#status-container {
+  margin: 0 auto;
+  color: #7b8d9d;
+  #transaction-fail {
+    background-color: #B4654A;
+  }
+  #spinner {
+    background-color: #000;
+  }
+  #spinner,
+  #transaction-fail {
+    width: 40px;
+    height: 40px;
+    margin: 5em auto 1em;
+    border-radius: 100%;
+    text-align: center;
+    &.animated {
+      -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+      animation: sk-scaleout 1.0s infinite ease-in-out;
+    }
+    i {
+      color: white;
+      font-size: 1.5em;
+      margin-top: 0.55rem;
+    }
+  }
+  #status-msg {
+    font-size: 0.55em;
+    letter-spacing: 1px;
   }
 }
 

@@ -70,6 +70,13 @@ card.addEventListener('change', function(event) {
   }
 });
 
+function retry() {
+
+}
+
+var resetForm = document.getElementById('reset-form');
+resetForm.addEventListener("click", retry);
+
 // Handle form submission.
 function submitForm(token) {
     $.ajax({
@@ -86,18 +93,21 @@ function submitForm(token) {
           }
         }
     }).then(function(stripeCustomer) {
-      var slideDuration = 225;
-      $('#spinner.animated').fadeToggle(250, function(){
+      $('#status-container').fadeToggle(250, function(){
         $('#success-container').fadeToggle(50, function(){
-          $('#success-msg').html('Your contributions keep our technicians on the ground, our boats on the water, and our helicopters in the air removing toxic pollutants from local wildlife habitat. You will recieve an email with additional information about your donation. Please respond directly with any questions you may have about your contribution.<h4 class="pt-4">Thank you! and welcome to the cleanup.</h4>');
+          $('#success-msg').html('Your contributions keep our technicians on the ground, our boats on the water, and our helicopters in the air removing toxic pollutants from local wildlife habitat. You will recieve an email with additional information about your donation. Please respond directly with any questions you may have about your contribution.<h4 class="pt-4 text-center text-uppercase">Thank you! and welcome to the cleanup.</h4>');
           $('#success-msg').fadeToggle(250);
         });
       });
       console.log(stripeCustomer);
     }).fail(function(e) {
-      $('#status-msg').text(e.responseJSON.message);
+      $('#spinner.animated').fadeToggle(200, function(){
+        $('#transaction-fail').fadeToggle(50, function(){
+          $('#status-msg').html('<h4 class="text-center text-uppercase">Oh no!</h4>' + '<h6 class="text-center pt-3 text-uppercase">' + e.responseJSON.message + '</h6>' + '<div id="reset-form" class="text-center pt-1"><i class="fas fa-redo-alt fa-2x"></i></div>');
+        });
+      });
     });
-  }
+}
 
 //create a token
 var form = document.getElementById('payment-form');
@@ -128,11 +138,13 @@ button.addEventListener('click', function(event) {
       } else {
         // Send the token to your server.
         $('#payment-form').fadeToggle(250, function(){
-          $('#status-container').fadeToggle(50, function(){
-            $("#spinner.animated").fadeToggle(200, function(){});
+        $('#status-msg').html('<h6 class="text-center">Please hang on while we process your contribution request<h6>');
+          $('#spinner.animated').fadeToggle(50, function(){
+            $("#status-container").fadeToggle(200, function(){
+              submitForm(result.token);
+            });
           })
         });
-        submitForm(result.token);
       }
     });
   } else {
