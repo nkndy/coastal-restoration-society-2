@@ -22,25 +22,17 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div class="embed-responsive embed-responsive-16by9" id="v1">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/gYb-gzx9-ro?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/pkwG-ImVcMY?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="embed-responsive embed-responsive-16by9">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/hRRwN806Cwo?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                <!-- <iframe src="https://player.vimeo.com/video/275484262?autoplay=1&loop=1&title=0&byline=0&portrait=0" width="640" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
-                <!-- <video controls
-                src="{{ v1 }}"
-                poster="{{ p1 }}"
-                class="embed-responsive-item"
-                type="video/mp4"
-                autoplay loop> -->
-                <!-- <iframe class="" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe> -->
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
               </div>
             </div>
           </div>
@@ -48,12 +40,14 @@
       </div>
       <div class="col-12" id="arrows">
         <a class="carousel-control-prev" href="#videoCarousel" role="button" data-slide="prev" style='background-image: url("{{ p1 }}");background-size: cover;'>
-          <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span> -->
+          <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+          <span><i class="fas fa-chevron-down fa-5x"></i></span>
+          <span class="sr-only">Previous</span>
         </a>
         <a class="carousel-control-next" href="#videoCarousel" role="button" data-slide="next" style='background-image: url("{{ p2 }}");background-size: cover;background-position: bottom;'>
-          <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span> -->
+          <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+          <span><i class="fas fa-chevron-up fa-5x"></i></span>
+          <span class="sr-only">Next</span>
         </a>
       </div>
     </div>
@@ -65,9 +59,9 @@ var videoSrc = $("#v1 iframe").attr("src");
 $('#videoCarousel').carousel({
   interval: false
 })
-// $('#videoCarousel').on('slide.bs.carousel', function () {
-//   console.log(from);
-// })
+$('#videoCarousel').on('slide.bs.carousel', function () {
+  console.log("hello");
+})
 
 
 // $('#myModal').on('show.bs.modal', function () { // on opening the modal
