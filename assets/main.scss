@@ -244,3 +244,43 @@ body {
     opacity: 0;
   }
 }
+
+.info {
+  background-color: aliceblue;
+  color: #7b8d9d;
+  h2, h3, h4, p {
+    padding: 0.5rem 0;
+    margin: 0 2rem;
+  }
+  h2 {
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 10px;
+    font-size: 1.45em;
+    border-bottom: 1px solid #7b8d9d;
+  }
+  h3 {
+    padding-top: 2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.3em;
+  }
+  h4 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+  }
+  p {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  width: 50%;
+  opacity: 0.75;
+}
+
+#arrows {
+  height: 34vh;
+}
