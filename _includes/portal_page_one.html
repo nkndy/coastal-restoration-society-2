@@ -1,3 +1,4 @@
+<script src="https://player.vimeo.com/api/player.js"></script>
 <button type="button" class="btn btn-secondary" id="fullscreen-button">Full Screen</button>
 {% capture p1 %}{{ 'uploads/cc1.JPG' | absolute_url }}{% endcapture %}
 {% capture p2 %}{{ 'uploads/cc4.jpg' | absolute_url }}{% endcapture %}
@@ -19,12 +20,12 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div class="embed-responsive embed-responsive-16by9" id="v1">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/gYb-gzx9-ro?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <iframe src="https://player.vimeo.com/video/276691373" width="640" height="360" frameborder="0" allowfullscreen></iframe>
               </div>
             </div>
             <div class="carousel-item">
               <div class="embed-responsive embed-responsive-16by9">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/pkwG-ImVcMY?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <iframe src="https://player.vimeo.com/video/276692226" width="640" height="360" frameborder="0" allowfullscreen></iframe>
               </div>
             </div>
             <div class="carousel-item">
@@ -36,7 +37,7 @@
         </div>
       </div>
       <div class="col-12" id="arrows">
-        <a class="carousel-control-prev" href="#videoCarousel" role="button" data-slide="prev" style='background-image: url("{{ p1 }}");background-size: cover;'>
+        <a class="carousel-control-prev" href="#videoCarousel" role="button" data-slide="prev" style='background-image: url("{{ p1 }}");background-size: cover;background-position: bottom;'>
           <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
           <span><i class="fas fa-chevron-down fa-5x"></i></span>
           <span class="sr-only">Previous</span>
@@ -52,14 +53,23 @@
 </div>
 
 <script type="text/javascript">
-var videoSrc = $("#v1 iframe").attr("src");
-$('#videoCarousel').carousel({
+
+var videoCarousel = $('#videoCarousel');
+videoCarousel.carousel({
   interval: false
 })
-$('#videoCarousel').on('slide.bs.carousel', function () {
-  console.log("hello");
+videoCarousel.on('slide.bs.carousel', function (e) {
+  if (e.to === 0) {
+     $('.carousel-control-prev').css("background-image", 'url("{{ p1 }}")')
+     $('.carousel-control-next').css("background-image", 'url("{{ p2 }}")')
+  } else if (e.to == 1) {
+    $('.carousel-control-prev').css("background-image", 'url("{{ p2 }}")')
+    $('.carousel-control-next').css("background-image", 'url("{{ p3 }}")')
+  } else if (e.to == 2) {
+    $('.carousel-control-prev').css("background-image", 'url("{{ p3 }}")')
+    $('.carousel-control-next').css("background-image", 'url("{{ p1 }}")')
+  }
 })
-
 
 // $('#myModal').on('show.bs.modal', function () { // on opening the modal
 //   // set the video to autostart
