@@ -251,17 +251,27 @@ body {
 .info {
   background-color: #f2f7f9;
   color: #7b8d9d;
-  h2, h3, h4, p, .explore {
+  #description,
+  #title,
+  #explore {
     padding: 0.5rem 0;
     margin: 0 2rem;
+    h4 {
+      margin-bottom: 0;
+    }
+  }
+  #description {
+    border-top: 1px solid #7b8d9d;
+    border-left: 1px solid #7b8d9d;
+    img {
+      float: left;
+    }
   }
   h2 {
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 10px;
     font-size: 1.45em;
-    border-top: 1px solid #7b8d9d;
-    border-left: 1px solid #7b8d9d;
   }
   h3 {
     padding-top: 2rem;
@@ -282,6 +292,9 @@ body {
   }
   #title {
     letter-spacing: 2px;
+    text-align: right;
+  }
+  #explore {
     text-align: right;
   }
 }

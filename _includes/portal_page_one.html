@@ -15,9 +15,10 @@
       <h4>Who we are</h4>
     </div>
     <div id="description">
-      <h2><img src="{{ wt }}" class="pl-3 pt-2"/></h2>
+      <h2><img src="{{ wt }}" class="px-3 py-2"/></h2>
+      <p class="pl-3">Clayoquot CleanUp is a world leader in marine habitat restoration.  Specializing in emergency spill response, accumulated debris removal, and aquaculture site deconstruction and removal our team of technical experts possess advanced training and experience that assures successful restoration of demanding marine environments.</p>
     </div>
-    <div class="explore"><a href="" class="btn btn-primary btn-lg" id="explore-button">Explore</a></div>
+    <div id="explore"><a href="" class="btn btn-primary btn-lg" id="explore-button">Explore</a></div>
   </div>
   <div class="col-7">
     <div class="row no-gutters">
@@ -59,13 +60,20 @@
 <script type="text/javascript">
 
 var iframes = document.querySelectorAll('iframe');
+
+function updateContent(txt, title) {
+  var dTitle = $('#title h4');
+  var description = $('#description p');
+  dTitle.text(title);
+  description.text(txt);
+}
+
 function switchVideo(currentIndex, previousIndex) {
   var toPlayer = new Vimeo.Player(iframes[currentIndex]);
   var fromPlayer = new Vimeo.Player(iframes[previousIndex]);
 
   toPlayer.play().then(function() {
       // the video was played
-      console.log("was played");
   }).catch(function(error) {
       switch (error.name) {
           case 'PasswordError':
@@ -85,7 +93,6 @@ function switchVideo(currentIndex, previousIndex) {
 
   fromPlayer.pause().then(function() {
       // the video was paused
-    console.log("was paused");
   }).catch(function(error) {
       switch (error.name) {
           case 'PasswordError':
@@ -107,18 +114,29 @@ function switchVideo(currentIndex, previousIndex) {
 function changeImages(currentIndex, previousIndex) {
   var img1;
   var img2;
+  var txt;
+  var title;
   switch (currentIndex) {
     case 0:
       img1 = "{{ p1 }}";
       img2 = "{{ p2 }}";
+      txt = "Clayoquot CleanUp is a world leader in marine habitat restoration.  Specializing in emergency spill response, accumulated debris removal, and aquaculture site deconstruction and removal our team of technical experts possess advanced training and experience that assures successful restoration of demanding marine environments.";
+      title = "Who we are";
+      updateContent(txt, title);
       break;
     case 1:
       img1 = "{{ p2 }}";
       img2 = "{{ p3 }}";
+      txt = "In June 2017 the CleanUp team set a record for cleaning the longest continuous stretch of coastline in the world.  In just under two weeks technical directors and teams of volunteers successfully restored 29.04 kilometres of pristine British Columbia coastline to a pollution-free state. The benefits to local First Nations, coastal communities, and a myriad of resident and migratory wildlife cannot be understated. Clayoquot CleanUp continues to work within Clayoquot Sound targeting the removal of accumulated ocean plastics and marine debris, abandoned aquaculture  sites, and responding to emergency pollution spills throughout the area.";
+      title = "What we do";
+      updateContent(txt, title);
       break;
     case 2:
       img1 = "{{ p3 }}";
       img2 = "{{ p1 }}";
+      txt = "Home to First Nations communities (Hesquiaht, Ahousaht, Tla-o-qui-aht) the District of Tofino, a plethora of visitors, part time residents and colorful characters, the biodiversity of our landscape is mirrored closely by the diversity of its human inhabitants.  Drawing from this diversity and the reliance we have upon the industries of fishing, aquaculture and eco-tourism, the link is clear between healthy landscapes and thriving wildlife and sustainable economic growth and development. Clayoquot Sound acts as an aggregator for ocean plastics and marine debris from both domestic and international sources. Commercial fishing gear, jettisoned shipping containers, styrofoam insulation and household plastics are all prevalent examples of pollution that is turning Clayoquot Sound into a landfill.   As a result, cetaceans and other wildlife combat entanglement as a way of life. Whales perish in lost fishing gear, birds choke on plastics mistaken for food and the integrity of the ecosystem as a whole declines.";
+      title = "Why clean up";
+      updateContent(txt, title);
       break;
   }
   $(".carousel-control-prev").stop().animate({ opacity: 0 }, 150, function(){
@@ -135,6 +153,7 @@ var videoCarousel = $('#videoCarousel');
 videoCarousel.carousel({
   interval: false
 })
+
 videoCarousel.on('slid.bs.carousel', function (e) {
   if (e.to === 0) {
     changeImages(e.to, e.from)
