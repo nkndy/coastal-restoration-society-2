@@ -41,10 +41,9 @@ $(document).ready(function() {
 		$('#fullscreen-button').hide();
 	});
 });
-$('#left-arrow').click(function() {
+$('#explore-button').click(function(e) {
+	e.preventDefault();
+	console.log("was clicked");
   $.fn.pagepiling.moveSectionUp();
-});
-$('#right-arrow').click(function() {
-  $.fn.pagepiling.moveSectionDown();
 });
 </script>

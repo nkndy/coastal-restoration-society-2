@@ -24,6 +24,9 @@ body {
  */
 .portal-page {
   background-color: #bec8cf;
+  .info {
+    height: 100vh;
+  }
   h1 {
     font-weight: 400;
   }
@@ -246,9 +249,9 @@ body {
 }
 
 .info {
-  background-color: aliceblue;
+  background-color: #f2f7f9;
   color: #7b8d9d;
-  h2, h3, h4, p {
+  h2, h3, h4, p, .explore {
     padding: 0.5rem 0;
     margin: 0 2rem;
   }
@@ -257,7 +260,8 @@ body {
     font-weight: 400;
     letter-spacing: 10px;
     font-size: 1.45em;
-    border-bottom: 1px solid #7b8d9d;
+    border-top: 1px solid #7b8d9d;
+    border-left: 1px solid #7b8d9d;
   }
   h3 {
     padding-top: 2rem;
@@ -273,6 +277,13 @@ body {
     font-size: 0.85rem;
     letter-spacing: 1px;
   }
+  .explore {
+    text-align: right;
+  }
+  #title {
+    letter-spacing: 2px;
+    text-align: right;
+  }
 }
 
 .carousel-control-next,
@@ -282,5 +293,16 @@ body {
 }
 
 #arrows {
-  height: 34vh;
+  height: 450px;
+}
+
+.btn-primary {
+  background-color: #b2aa48;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 1rem;
+  border-radius: 50px;
+  padding-left: 1.35rem;
+  padding-right: 1.35rem;
 }
