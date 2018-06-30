@@ -20,18 +20,6 @@ function hideDonation() {
 	$(".portal-page.three").fadeToggle("fast");
 }
 
-function setSubscription(type) {
-	var isAnnual;
-	switch (type) {
-		case "Annual":
-			isAnnual = true
-			break;
-		case "OneTime":
-			isAnnual = false
-			break;
-	}
-}
-
 $(document).ready(function() {
 	document.getElementById('fullscreen-button').addEventListener('click', () => {
 		if (screenfull.enabled) {

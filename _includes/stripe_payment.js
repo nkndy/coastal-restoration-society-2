@@ -94,7 +94,8 @@ function submitForm(token) {
             "name": $('#FormControlInputName').val(),
             "company_name": $('#FormControlInputCompany').val(),
             "phone": $('#FormControlInputPhone').val(),
-            "plan": "Coastal Warrior"
+            "plan": $('#plan-name').text(),
+            "subscriptionType": $('#slide-text').data( "type" )
           }
         }
     }).then(function(stripeCustomer) {
