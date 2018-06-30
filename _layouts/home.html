@@ -3,13 +3,18 @@ layout: default
 ---
 
 {% capture mapfull %}{{ 'uploads/map_empty.png' | absolute_url }}{% endcapture %}
+{% capture heli %}{{ 'uploads/heli.png' | absolute_url }}{% endcapture %}
 
+<section class="section portal-page intro" id="intro">{% include portal_page_intro.html %}</section>
 <section class="section portal-page one" id="one">{% include portal_page_one.html %}</section>
 <section class="section portal-page two" id="two" style='background-image: url("{{ mapfull }}");background-size: cover;background-position: bottom;'>{% include portal_page_two.html %}</section>
 <section class="section portal-page three" id="three">{% include portal_page_three.html %}</section>
 
 <script type="text/javascript">
 
+function hideIntro() {
+	$(".portal-page.intro").fadeToggle("fast");
+}
 function hideInfo() {
 	$(".portal-page.one").fadeToggle("fast");
 }
@@ -40,6 +45,9 @@ $('#donate-button').click(function(e) {
 	var str = $('#slide-text').text();
 	$("#subscription").html(str);
 	hideMap();
+});
+$('.portal-page.intro').click(function(e) {
+	hideIntro();
 });
 
 </script>

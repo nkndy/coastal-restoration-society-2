@@ -122,6 +122,9 @@ body {
       background-color: rgba(255, 255, 255, 0.5);
     }
   }
+  &.intro {
+    z-index: 4;
+  }
   &.one {
     z-index: 3;
   }
