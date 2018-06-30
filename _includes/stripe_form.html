@@ -1,4 +1,4 @@
-<form action="/charge" method="post" id="payment-form" autocomplete="on" class="py-4 text-uppercase align-self-center">
+<form action="/charge" method="post" id="payment-form" autocomplete="on" class="py-4 text-uppercase align-self-center" autocomplete="off">
   <div class="row">
     <div class="col">
       <label for="card-element"><small>Card:</small></label>
@@ -9,25 +9,25 @@
   <div class="row">
     <div class="col">
       <label for="FormControlInputName"><small>Name:</small></label>
-      <input type="text" class="form-control" id="FormControlInputName" placeholder="Josh Temple" required/>
+      <input type="text" class="form-control" id="FormControlInputName" placeholder="Josh Temple" autocomplete="off" required/>
     </div>
   </div>
   <div class="row">
     <div class="col">
       <label for="FormControlInputCompany"><small>Company: (Optional)</small></label>
-      <input type="text" class="form-control" id="FormControlInputCompany" placeholder="Coastal Restoration Society"/>
+      <input type="text" class="form-control" id="FormControlInputCompany" placeholder="Coastal Restoration Society" autocomplete="off"/>
     </div>
   </div>
   <div class="row">
     <div class="col">
       <label for="FormControlInputPhone"><small>Phone:</small></label>
-      <input type="tel" pattern="^[0-9-+s() ]*$" class="form-control" id="FormControlInputPhone" placeholder="+1 (250) 266-1987" required/>
+      <input type="tel" pattern="^[0-9-+s() ]*$" class="form-control" id="FormControlInputPhone" placeholder="+1 (250) 266-1987" autocomplete="off" required/>
     </div>
   </div>
   <div class="row">
     <div class="col">
       <label for="FormControlInputEmail"><small>Email:</small></label>
-      <input type="email" class="form-control" id="FormControlInputEmail" placeholder="name@example.com" required/>
+      <input type="email" class="form-control" id="FormControlInputEmail" placeholder="name@example.com" autocomplete="off" required/>
     </div>
   </div>
   <!-- <label for="card-element">

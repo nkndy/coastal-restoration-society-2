@@ -18,17 +18,17 @@
           </div>
         </div>
       </div>
-      <div class="col pt-5 pb-3 px-4" id="donation-description">
+      <div class="col pt-5 pb-4 px-4" id="donation-description">
         <div class="row no-gutters align-items-center">
           <p>Designed for groups and families who are familiar with a pack mentality, the Wolf Pack membership brings people together to share in the rewards of teamwork and environmental stewardship.  Restoring habitat for bears and wolves is a large part of what motivates our rehabilitation efforts every year.  You’ll be recognized as a Coastal Ambassador on our website, receive our seasonal newsletter, and custom Coastal Ambassador t-shirts for the whole pack.</p>
         </div>
-        <section class="row no-gutters align-items-center">
+        <section class="row no-gutters align-items-center pt-3">
           <div class="col input-wrap">
             <input id="slide-toggle" type="checkbox" checked>
-            <label for="slide-toggle" id="slide-text">Annual</label>
+            <label for="slide-toggle" id="slide-text" data-type="Annual">Annual</label>
           </div>
-          <div class="col">
-            Donate
+          <div class="col text-center">
+            <button class="btn btn-primary btn-lg" id="donate-button">Donate</button>
           </div>
         </section>
       </div>
@@ -43,9 +43,11 @@ function donationType(type) {
   var slideText = $('#slide-text');
   // If the checkbox is checked, display the output text
   if (type == true){
-    slideText.text("One Time")
+    slideText.text("One Time");
+    slideText.data( "type", "OneTime" );
   } else {
-    slideText.text("Annual")
+    slideText.text("Annual");
+    slideText.data( "type", "Annual" );
   }
 }
 

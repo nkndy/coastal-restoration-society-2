@@ -13,14 +13,26 @@ layout: default
 function hideInfo() {
 	$(".portal-page.one").fadeToggle("fast");
 }
+function hideMap() {
+	$(".portal-page.two").fadeToggle("fast");
+}
+function hideDonation() {
+	$(".portal-page.three").fadeToggle("fast");
+}
+
+function setSubscription(type) {
+	var isAnnual;
+	switch (type) {
+		case "Annual":
+			isAnnual = true
+			break;
+		case "OneTime":
+			isAnnual = false
+			break;
+	}
+}
 
 $(document).ready(function() {
-	// $('#pagepiling').pagepiling({
-  //   direction: 'horizontal',
-  //   navigation: false,
-	// 	keyboardScrolling: false
-  // });
-  // $.fn.pagepiling.setAllowScrolling(false);
 	document.getElementById('fullscreen-button').addEventListener('click', () => {
 		if (screenfull.enabled) {
 			screenfull.request();
@@ -30,8 +42,16 @@ $(document).ready(function() {
 		$('#fullscreen-button').hide();
 	});
 });
+
 $('#explore-button').click(function(e) {
 	e.preventDefault();
 	hideInfo();
 });
+$('#donate-button').click(function(e) {
+	e.preventDefault();
+	var str = $('#slide-text').text();
+	$("#subscription").html(str);
+	hideMap();
+});
+
 </script>
