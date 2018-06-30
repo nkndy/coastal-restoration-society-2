@@ -5,6 +5,7 @@ layout: default
 {% capture mapfull %}{{ 'uploads/map_empty.png' | absolute_url }}{% endcapture %}
 {% capture heli %}{{ 'uploads/heli.png' | absolute_url }}{% endcapture %}
 
+<button type="button" class="btn btn-secondary" id="fullscreen-button">Full Screen</button>
 <section class="section portal-page intro" id="intro">{% include portal_page_intro.html %}</section>
 <section class="section portal-page one" id="one">{% include portal_page_one.html %}</section>
 <section class="section portal-page two" id="two" style='background-image: url("{{ mapfull }}");background-size: cover;background-position: bottom;'>{% include portal_page_two.html %}</section>
@@ -50,4 +51,25 @@ $('.portal-page.intro').click(function(e) {
 	hideIntro();
 });
 
+//reset screen on timeout
+function idleReset() {
+    var t;
+    window.onload = resetTimer;
+    window.onmousemove = resetTimer;
+    window.onmousedown = resetTimer;  // catches touchscreen presses as well
+    window.ontouchstart = resetTimer; // catches touchscreen swipes as well
+    window.onclick = resetTimer;      // catches touchpad clicks as well
+    window.onkeypress = resetTimer;
+    window.addEventListener('scroll', resetTimer, true); // improved; see comments
+
+    function resetScreen() {
+      console.log("reset");
+    }
+
+    function resetTimer() {
+        clearTimeout(t);
+        t = setTimeout(resetScreen, 600);  // time is in milliseconds
+    }
+}
+idleReset();
 </script>
