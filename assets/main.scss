@@ -57,6 +57,65 @@ body {
         color: $moneyGreen;
       }
     }
+
+    // SWITCH
+    section {
+        label {
+          display: inline-block;
+          position: relative;
+          height: 44px;
+          width: 90px;
+          background-color: #fff;
+          width: 100%;
+          color: $body !important;
+          text-align: center;
+          padding-top: 10px;
+        }
+        label {
+          cursor: pointer;
+          // font-size: 0;
+          color: transparent;
+          border-radius: 22px;
+        }
+        label:after {
+          content: '';
+          // color: rgba(255, 255, 255, 0) !important;
+          display: block;
+          height: 40px;
+          width: 40px;
+          position: absolute;
+          top: 2px;
+          right: 160px;
+          border-radius: 50%;
+          background-color: #e8e8e8;
+          box-shadow: 2px 0px 0px rgba(0,0,0,0.15);
+        }
+        input:checked + label {
+          background: #caeae8;
+        }
+        input:checked + label:after {
+          right: 2px;
+          background-color: #fff;
+          box-shadow: -2px 0px 0px rgba(0,0,0,0.1);
+        }
+        input {
+          position: absolute !important;
+          width: 1px;
+          height: 1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          bottom: 0;
+        }
+        label {
+          transition: background-color 500ms ease;
+          &:after {
+            transition: right 500ms ease,
+              background-color 500ms ease,
+              box-shadow 500ms ease;
+          }
+        }
+      }
+
     #donation-description {
       background-color: rgba(255, 255, 255, 0.5);
     }

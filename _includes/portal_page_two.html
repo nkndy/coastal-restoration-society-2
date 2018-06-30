@@ -8,7 +8,7 @@
     </div>
     <div class="row no-gutters">
       <div class="col-12"><h2 class="pr-5">Become A donor</h2></div>
-      <div class="col py-5" id="donation-list">
+      <div class="col pt-5" id="donation-list">
         <div class="row no-gutters align-items-center">
           <div class="col-2 icon">
             <img src="{{ wolf }}"/>
@@ -18,9 +18,39 @@
           </div>
         </div>
       </div>
-      <div class="col py-5 px-4" id="donation-description">Designed for groups and families who are familiar with a pack mentality, the Wolf Pack membership brings people together to share in the rewards of teamwork and environmental stewardship.  Restoring habitat for bears and wolves is a large part of what motivates our rehabilitation efforts every year.  You’ll be recognized as a Coastal Ambassador on our website, receive our seasonal newsletter, and custom Coastal Ambassador t-shirts for the whole pack.</div>
+      <div class="col pt-5 pb-3 px-4" id="donation-description">
+        <div class="row no-gutters align-items-center">
+          <p>Designed for groups and families who are familiar with a pack mentality, the Wolf Pack membership brings people together to share in the rewards of teamwork and environmental stewardship.  Restoring habitat for bears and wolves is a large part of what motivates our rehabilitation efforts every year.  You’ll be recognized as a Coastal Ambassador on our website, receive our seasonal newsletter, and custom Coastal Ambassador t-shirts for the whole pack.</p>
+        </div>
+        <section class="row no-gutters align-items-center">
+          <div class="col input-wrap">
+            <input id="slide-toggle" type="checkbox" checked>
+            <label for="slide-toggle" id="slide-text">Annual</label>
+          </div>
+          <div class="col">
+            Donate
+          </div>
+        </section>
+      </div>
     </div>
   </div>
   <div class="col-6 p-5">
   </div>
 </div>
+
+<script type="text/javascript">
+function donationType(type) {
+  var slideText = $('#slide-text');
+  // If the checkbox is checked, display the output text
+  if (type == true){
+    slideText.text("One Time")
+  } else {
+    slideText.text("Annual")
+  }
+}
+
+$( "#slide-text" ).click(function() {
+  donationType($("#slide-toggle").is(':checked'));
+});
+
+</script>
