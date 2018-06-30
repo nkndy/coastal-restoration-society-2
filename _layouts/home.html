@@ -2,36 +2,24 @@
 layout: default
 ---
 
-<!-- <div id="left-arrow">Left</div>
-<div id="right-arrow">Right</div> -->
-<section id="pagepiling">
-	<section class="section portal-page one"><div>{% include portal_page_one.html %}</div></section>
-	<section class="section portal-page two"><div class="container-fluid">{% include portal_page_two.html %}</div></section>
-	<section class="section portal-page three"><div class="container-fluid">{% include portal_page_three.html %}</div></section>
-</section>
+	<section class="section portal-page one" id="one">{% include portal_page_one.html %}</section>
+	<section class="section portal-page two" id="two">{% include portal_page_two.html %}</section>
+	<section class="section portal-page three" id="three">{% include portal_page_three.html %}</section>
+
 <script type="text/javascript">
+
+function hideInfo() {
+	$(".portal-page.one").fadeToggle("fast");
+	console.log("hide info");
+}
+
 $(document).ready(function() {
-	$('#pagepiling').pagepiling({
-    direction: 'horizontal',
-    navigation: false,
-		keyboardScrolling: false,
-    afterRender: function(){
-      $('#left-arrow').addClass("disabled")
-    },
-    afterLoad: function(anchorLink, index){
-      if (index != 1) {
-        $('#left-arrow').removeClass("disabled")
-      } else if (index == 1) {
-        $('#left-arrow').addClass("disabled")
-      }
-      if (index != 2) {
-        $('#right-arrow').removeClass("disabled")
-      } else if (index == 2) {
-        $('#right-arrow').addClass("disabled")
-      }
-    },
-  });
-  $.fn.pagepiling.setAllowScrolling(false);
+	// $('#pagepiling').pagepiling({
+  //   direction: 'horizontal',
+  //   navigation: false,
+	// 	keyboardScrolling: false
+  // });
+  // $.fn.pagepiling.setAllowScrolling(false);
 	document.getElementById('fullscreen-button').addEventListener('click', () => {
 		if (screenfull.enabled) {
 			screenfull.request();
@@ -44,6 +32,6 @@ $(document).ready(function() {
 $('#explore-button').click(function(e) {
 	e.preventDefault();
 	console.log("was clicked");
-  $.fn.pagepiling.moveSectionUp();
+	hideInfo();
 });
 </script>

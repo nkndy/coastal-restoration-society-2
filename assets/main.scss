@@ -23,9 +23,22 @@ body {
  * how you can use CSS to style your Element's container.
  */
 .portal-page {
-  background-color: #bec8cf;
-  .info {
-    height: 100vh;
+  background-color: #f2f7f9;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  .info,
+  .map,
+  .payment {
+  }
+  &.one {
+    z-index: 3;
+  }
+  &.two {
+    z-index: 2;
+  }
+  &.three {
+    z-index: 1;
   }
   h1 {
     font-weight: 400;
