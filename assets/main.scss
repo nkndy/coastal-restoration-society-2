@@ -17,6 +17,14 @@ body {
   color: #ffffff;
 }
 
+#back-button {
+  position: absolute;
+  z-index: 10000;
+  color: $donation-title;
+  letter-spacing: 3px;
+  display: none;
+}
+
 .text--alt-color-dark {
   color: $body;
 }

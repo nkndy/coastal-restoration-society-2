@@ -1,25 +1,2 @@
 <div class="row no-gutters justify-content-center intro" style='background-image: url("{{ heli }}");background-size: cover;background-position: bottom;'>
 </div>
-
-<script type="text/javascript">
-function idleReset() {
-    var t;
-    window.onload = resetTimer;
-    window.onmousemove = resetTimer;
-    window.onmousedown = resetTimer;  // catches touchscreen presses as well
-    window.ontouchstart = resetTimer; // catches touchscreen swipes as well
-    window.onclick = resetTimer;      // catches touchpad clicks as well
-    window.onkeypress = resetTimer;
-    window.addEventListener('scroll', resetTimer, true); // improved; see comments
-
-    function resetScreen() {
-      console.log("reset");
-    }
-
-    function resetTimer() {
-        clearTimeout(t);
-        t = setTimeout(yourFunction, 600);  // time is in milliseconds
-    }
-}
-idleReset();
-</script>

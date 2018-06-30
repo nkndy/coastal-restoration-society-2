@@ -6,6 +6,9 @@ layout: default
 {% capture heli %}{{ 'uploads/heli.png' | absolute_url }}{% endcapture %}
 
 <button type="button" class="btn btn-secondary" id="fullscreen-button">Full Screen</button>
+	<div class="py-5 text-uppercase" id="back-button">
+		<i class="fas fa-chevron-left pl-5 pr-3"></i>Back
+	</div>
 <section class="section portal-page intro" id="intro">{% include portal_page_intro.html %}</section>
 <section class="section portal-page one" id="one">{% include portal_page_one.html %}</section>
 <section class="section portal-page two" id="two" style='background-image: url("{{ mapfull }}");background-size: cover;background-position: bottom;'>{% include portal_page_two.html %}</section>
@@ -13,19 +16,18 @@ layout: default
 
 <script type="text/javascript">
 
-function hideIntro() {
+//toggle slide visibility
+function toggleIntro() {
 	$(".portal-page.intro").fadeToggle("fast");
 }
-function hideInfo() {
+function toggleInfo() {
 	$(".portal-page.one").fadeToggle("fast");
 }
-function hideMap() {
+function toggleMap() {
 	$(".portal-page.two").fadeToggle("fast");
 }
-function hideDonation() {
-	$(".portal-page.three").fadeToggle("fast");
-}
 
+//fullscreen button
 $(document).ready(function() {
 	document.getElementById('fullscreen-button').addEventListener('click', () => {
 		if (screenfull.enabled) {
@@ -37,39 +39,69 @@ $(document).ready(function() {
 	});
 });
 
+//move through slides
 $('#explore-button').click(function(e) {
 	e.preventDefault();
-	hideInfo();
+	toggleInfo();
+	backButtonVisibility("map");
 });
 $('#donate-button').click(function(e) {
 	e.preventDefault();
 	var str = $('#slide-text').text();
 	$("#subscription").html(str);
-	hideMap();
+	toggleMap();
+	backButtonVisibility("donate");
 });
 $('.portal-page.intro').click(function(e) {
-	hideIntro();
+	toggleIntro();
+	backButtonVisibility("video");
+});
+
+// back button functionality
+
+function backButtonVisibility(location) {
+		if (location != "intro") {
+			$('#back-button').show();
+		} else {
+			$('#back-button').hide();
+		}
+}
+
+function backButtonClicked(location) {
+
+}
+
+$('#back-button').click(function(e) {
+	if ( $('.portal-page.two').css('display') == 'none' ){
+    toggleMap();
+	} else if ( $('.portal-page.one').css('display') == 'none' ) {
+		toggleInfo();
+	} else if ( $('.portal-page.intro').css('display') == 'none' ) {
+		toggleIntro();
+	} else {
+		// do nothing
+	}
 });
 
 //reset screen on timeout
-function idleReset() {
-    var t;
-    window.onload = resetTimer;
-    window.onmousemove = resetTimer;
-    window.onmousedown = resetTimer;  // catches touchscreen presses as well
-    window.ontouchstart = resetTimer; // catches touchscreen swipes as well
-    window.onclick = resetTimer;      // catches touchpad clicks as well
-    window.onkeypress = resetTimer;
-    window.addEventListener('scroll', resetTimer, true); // improved; see comments
-
-    function resetScreen() {
-      console.log("reset");
-    }
-
-    function resetTimer() {
-        clearTimeout(t);
-        t = setTimeout(resetScreen, 600);  // time is in milliseconds
-    }
-}
-idleReset();
+// function idleReset() {
+//     var t;
+//     window.onload = resetTimer;
+//     window.onmousemove = resetTimer;
+//     window.onmousedown = resetTimer;  // catches touchscreen presses as well
+//     window.ontouchstart = resetTimer; // catches touchscreen swipes as well
+//     window.onclick = resetTimer;      // catches touchpad clicks as well
+//     window.onkeypress = resetTimer;
+//     window.addEventListener('scroll', resetTimer, true); // improved; see comments
+//
+//     function resetScreen() {
+//       console.log("reset");
+//     }
+//
+//     function resetTimer() {
+//         clearTimeout(t);
+//         t = setTimeout(resetScreen, 600);  // time is in milliseconds
+//     }
+// }
+// idleReset();
 </script>
