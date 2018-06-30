@@ -6,6 +6,11 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500');
 
 $errors: #fce883;
+$moneyGreen: #c9d6c9;
+$body: #7b8d9d;
+$brand-background: #f2f7f9;
+$button: #b2aa48;
+$donation-title: #124559;
 
 body {
   font-family: 'Montserrat', sans-serif;
@@ -13,7 +18,7 @@ body {
 }
 
 .text--alt-color-dark {
-  color: #7b8d9d;
+  color: $body;
 }
 .text--alt-color-darkest {
   color: #545a61;
@@ -23,13 +28,38 @@ body {
  * how you can use CSS to style your Element's container.
  */
 .portal-page {
-  background-color: #f2f7f9;
+  background-color: $brand-background;
   height: 100vh;
   width: 100%;
   position: absolute;
+  color: $body;
   .info,
   .map,
   .payment {
+    height: 100vh;
+  }
+  .map {
+    h2 {
+      color: $donation-title;
+      font-weight: normal;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border-bottom: 1px solid $moneyGreen;
+      padding-bottom: 0.5rem;
+      margin-bottom: 0px;
+    }
+    h4 {
+      margin-bottom: 0;
+      font-weight: normal;
+      font-size: 1.4em;
+      .amount {
+        letter-spacing: 3px;
+        color: $moneyGreen;
+      }
+    }
+    #donation-description {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
   }
   &.one {
     z-index: 3;
@@ -93,7 +123,7 @@ body {
    .b-right {
      border-right: 1px solid white;
      p {
-       color: #7b8d9d;
+       color: $body;
        font-size: 0.975em;
        font-weight: 600;
      }
@@ -117,20 +147,20 @@ body {
      .form-control {
        padding: 5px 0 5px;
        border: none;
-       border-bottom: 1px solid #7b8d9d;
+       border-bottom: 1px solid $body;
        border-radius: 0px;
-       color: #7b8d9d;
+       color: $body;
      }
      #card-element {
        padding: 8px 0 9px;
-       border-bottom: 1px solid #7b8d9d;
+       border-bottom: 1px solid $body;
      }
    }
    .card-detail {
      background-color: rgba(255, 255, 255, 0.75);
    }
    .payment-submit {
-     background-color: #7b8d9d;
+     background-color: $body;
      #payment-submit{
        margin-top: 0;
        color: white;
@@ -190,7 +220,7 @@ body {
 
 #success-container {
   margin: 0 auto;
-  color: #7b8d9d;
+  color: $body;
   .spinner-success {
     width: 40px;
     height: 40px;
@@ -212,7 +242,7 @@ body {
 
 #status-container {
   margin: 0 auto;
-  color: #7b8d9d;
+  color: $body;
   #transaction-fail {
     background-color: #B4654A;
   }
@@ -262,8 +292,8 @@ body {
 }
 
 .info {
-  background-color: #f2f7f9;
-  color: #7b8d9d;
+  background-color: $brand-background;
+  color: $body;
   #description,
   #title,
   #explore {
@@ -274,8 +304,8 @@ body {
     }
   }
   #description {
-    border-top: 1px solid #7b8d9d;
-    border-left: 1px solid #7b8d9d;
+    border-top: 1px solid $body;
+    border-left: 1px solid $body;
     img {
       float: left;
     }
@@ -323,7 +353,7 @@ body {
 }
 
 .btn-primary {
-  background-color: #b2aa48;
+  background-color: $button;
   border: none;
   text-transform: uppercase;
   letter-spacing: 5px;
