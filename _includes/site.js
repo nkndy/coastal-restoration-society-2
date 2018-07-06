@@ -1,3 +1,7 @@
+{% capture p1 %}{{ 'uploads/cc1.JPG' | absolute_url }}{% endcapture %}
+{% capture p2 %}{{ 'uploads/cc4.jpg' | absolute_url }}{% endcapture %}
+{% capture p3 %}{{ 'uploads/cc3.JPG' | absolute_url }}{% endcapture %}
+
 // Create a Stripe client.
 var stripe = Stripe('pk_test_sVOSwu1mjrLOs2C6m9Gjia8t');
 
@@ -82,6 +86,27 @@ function retry() {
 var resetForm = document.getElementById('reset-form');
 resetForm.addEventListener("click", retry);
 
+// <div id="status-container" style="display: none;">
+//   <div id="spinner" class="animated" style="display: none;"></div>
+//   <div id="transaction-fail" style="display: none;"><i class="fas fa-exclamation"></i></div>
+//   <div class="p-4" id="status-msg"></div>
+//   <div id="reset-form" class="text-center pt-1" style="display: none;"><i class="fas fa-redo-alt fa-2x"></i></div>
+// </div>
+// <div id="success-container" style="display: none;">
+//   <div class="spinner-success"><i class="fas fa-check"></i></div>
+//   <div class="p-4 text-center" id="success-msg" style="display: none;"></div>
+// </div>
+
+function restartForm() {
+  $('#payment-form').css('display', 'initial');
+  $('#spinner').css('display', 'none');
+  $('#status-container').css('display', 'none');
+  $('#transaction-fail').css('display', 'none');
+  $('#reset-form').css('display', 'none');
+  $('#success-container').css('display', 'none');
+  $('#success-msg').css('display', 'none');
+}
+
 // Handle form submission.
 function submitForm(token) {
     $.ajax({
@@ -146,10 +171,8 @@ button.addEventListener('click', function(event) {
         // Send the token to your server.
         $('#payment-form').fadeToggle(250, function(){
         $('#status-msg').html('<h6 class="text-center">Please hang on while we process your contribution request<h6>');
-          if ($('#spinner.animated').css('display') != 'none' ) {
-            $('#spinner.animated').fadeToggle(50, function(){
-            })
-          }
+          $('#spinner.animated').fadeToggle(50, function(){
+          })
           $("#status-container").fadeToggle(200, function(){
             submitForm(result.token);
           });
@@ -255,28 +278,6 @@ $('#back-button').click(function(e) {
 		// do nothing
 	}
 });
-
-//reset screen on timeout
-// function idleReset() {
-//     var t;
-//     window.onload = resetTimer;
-//     window.onmousemove = resetTimer;
-//     window.onmousedown = resetTimer;  // catches touchscreen presses as well
-//     window.ontouchstart = resetTimer; // catches touchscreen swipes as well
-//     window.onclick = resetTimer;      // catches touchpad clicks as well
-//     window.onkeypress = resetTimer;
-//     window.addEventListener('scroll', resetTimer, true); // improved; see comments
-//
-//     function resetScreen() {
-//       console.log("reset");
-//     }
-//
-//     function resetTimer() {
-//         clearTimeout(t);
-//         t = setTimeout(resetScreen, 600);  // time is in milliseconds
-//     }
-// }
-// idleReset();
 
 var iframes = document.querySelectorAll('iframe');
 
@@ -413,19 +414,6 @@ function idleLogout() {
 			console.log("timeout");
       $("#payment-form").trigger("reset");
       card.clear();
-      if ( $('#payment-form').css('display') == 'none' ) {
-        $('#payment-form').fadeToggle();
-      }
-      if ( $('#status-container').css('display') != 'none' ) {
-        $('#status-container').fadeToggle();
-      }
-      if ( $('#success-container').css('display') != 'none' ) {
-        $('#success-container').fadeToggle();
-      }
-      if ( $('#transaction-fail').css('display') != 'none' ) {
-        $('#transaction-fail').fadeToggle();
-        $('#spinner.animated').fadeToggle();
-      }
 			if ( $('.portal-page.two').css('display') == 'none' ){
 				backButtonVisibility("map")
 				toggleMap();
@@ -440,6 +428,7 @@ function idleLogout() {
 				toggleIntro();
 				playSlide(false);
 			}
+      restartForm();
         // your function for too long inactivity goes here
         // e.g. window.location.href = 'logout.php';
     }
