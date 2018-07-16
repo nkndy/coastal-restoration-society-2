@@ -10,7 +10,8 @@ $moneyGreen: #c9d6c9;
 $body: #7b8d9d;
 $brand-background: #f2f7f9;
 $button: #b2aa48;
-$donation-title: #124559;
+$donation-title: #123449;
+$muted: #BBC8D0;
 
 body {
   font-family: 'Montserrat', sans-serif;
@@ -20,7 +21,7 @@ body {
 #back-button {
   position: absolute;
   z-index: 10000;
-  color: $donation-title;
+  color: $muted;
   letter-spacing: 3px;
   display: none;
 }
@@ -37,9 +38,6 @@ body {
  */
 .portal-page {
   background-color: $brand-background;
-  height: 100vh;
-  width: 100%;
-  position: absolute;
   color: $body;
   .info,
   .map,
@@ -363,54 +361,18 @@ body {
   }
 }
 
-.info {
-  background-color: $brand-background;
-  color: $body;
-  #description,
-  #title,
-  #explore {
-    padding: 0.5rem 0;
-    margin: 0 2rem;
-    h4 {
-      margin-bottom: 0;
-    }
-  }
+.one {
   #description {
-    border-top: 1px solid $body;
-    border-left: 1px solid $body;
+    border-top: 1px solid $muted;
     img {
-      float: left;
+      border-left: 1px solid $muted;
     }
   }
-  h2 {
+  .title {
     text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 10px;
-    font-size: 1.45em;
-  }
-  h3 {
-    padding-top: 2rem;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size: 1.3em;
-  }
-  h4 {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-  }
-  p {
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-  }
-  .explore {
-    text-align: right;
-  }
-  #title {
-    letter-spacing: 2px;
-    text-align: right;
-  }
-  #explore {
-    text-align: right;
+    color: $donation-title;
+    border-bottom: 1px solid $muted;
+    border-right: 1px solid $muted;
   }
 }
 
@@ -429,7 +391,7 @@ body {
   border: none;
   text-transform: uppercase;
   letter-spacing: 5px;
-  font-size: 1.25rem;
+  font-size: 0.8rem;
   border-radius: 50px;
   padding: 0.85rem 2.25rem;
 }

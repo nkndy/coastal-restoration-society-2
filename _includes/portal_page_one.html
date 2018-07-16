@@ -2,49 +2,33 @@
 {% capture p1 %}{{ 'uploads/cc1.JPG' | absolute_url }}{% endcapture %}
 {% capture p2 %}{{ 'uploads/cc4.jpg' | absolute_url }}{% endcapture %}
 {% capture p3 %}{{ 'uploads/cc3.JPG' | absolute_url }}{% endcapture %}
-<div class="row no-gutters info">
-  <div class="col align-self-center">
-    <div id="title">
-      <h4>Who we are</h4>
+<div class="row align-items-center" style="height: 100vh;">
+  <div class="col">
+    <div class="row">
+      <div class="col-4 pl-5">
+        <h4 class="text-right title pb-3 pr-4 mb-4">Become A Coastal Amabssador</h4>
+      </div>
     </div>
-    <div id="description">
-      <h2><img src="{{ wt }}" class="px-3 py-2"/></h2>
-      <p class="pl-3">Clayoquot Sound needs your help! Ocean plastics and other forms of pollution are washing ashore with every tide. This garbage threatens all kinds of wildlife, Indigenous culture, and the communities that call Clayoquot Sound home. Become a Coastal Ambassador and help protect this wonderful coast with us!<br><br>Travel in our helicopter to remote beaches within Clayoquot Sound and help our rehabilitation efforts to Restore Our Shore. Help us preserve these important areas for breeding, nesting, and foraging for so many kinds of wildlife. Learn about this wildlife from your guide as you enjoy a spectacular aerial safari on the way home.</p>
-    </div>
-    <div id="explore"><a href="" class="btn btn-primary btn-lg" id="explore-button">Explore</a></div>
-  </div>
-  <div class="col-7">
-    <div class="row no-gutters">
-      <div class="col-12">
-        <div id="videoCarousel" class="carousel" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="embed-responsive embed-responsive-16by9" id="v1">
-                <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/276692226" width="640" height="360" frameborder="0" allowfullscreen></iframe>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/276691373" width="640" height="360" frameborder="0" allowfullscreen></iframe>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/276692737" width="640" height="360" frameborder="0" allowfullscreen></iframe>
-              </div>
-            </div>
+    <div class="row">
+      <div class="col pl-5">
+        <div class="row no-gutters" id="description">
+          <div class="col-4">
+            <img src="{{ wt }}" class="img-fluid pl-4 pt-3"/>
+          </div>
+          <div class="col">
+            <p class="pl-3 pt-4 mb-4 pb-4">Clayoquot Sound needs your help! Ocean plastics and other forms of pollution are washing ashore with every tide. This garbage threatens all kinds of wildlife, Indigenous culture, and the communities that call Clayoquot Sound home
+              <!-- <br><br>Travel in our helicopter to remote beaches within Clayoquot Sound and help our rehabilitation efforts to Restore Our Shore. Help us preserve these important areas for breeding, nesting, and foraging for so many kinds of wildlife. Learn about this wildlife from your guide as you enjoy a spectacular aerial safari on the way home. -->
+            </p>
+            <div id="explore" class="pr-1 text-right"><a href="" class="btn btn-primary btn-lg" id="explore-button">Take the next step</a></div>
           </div>
         </div>
       </div>
-      <div class="col-12" id="arrows">
-        <a class="carousel-control-prev" href="#videoCarousel" role="button" data-slide="prev" style='background-image: url("{{ p1 }}");background-size: cover;background-position: bottom;'>
-          <img src="{{ down }}" style="max-width: 156px;">
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#videoCarousel" role="button" data-slide="next" style='background-image: url("{{ p2 }}");background-size: cover;background-position: bottom;'>
-          <img src="{{ up }}" style="max-width: 156px;">
-          <span class="sr-only">Next</span>
-        </a>
+      <div class="col-8">
+        <div id="video">
+            <div class="embed-responsive embed-responsive-16by9" id="v1">
+              <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/276691373" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
       </div>
     </div>
   </div>
