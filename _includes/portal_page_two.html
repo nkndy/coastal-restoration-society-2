@@ -1,40 +1,6 @@
-{% capture wolf %}{{ 'uploads/wolf_pack.png' | absolute_url }}{% endcapture %}
 <div class="row no-gutters map">
   <div class="col-6 p-5 align-self-end">
-    <div class="row no-gutters">
-      <div class="col-6">
-        <p class="py-5">Your contributions keep our technicians on the ground, our boats on the water, and our helicopters in the air removing toxic pollutants from local wildlife habitat.</p>
-      </div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-12"><h2 class="pr-5">Become A donor</h2></div>
-      <div class="col pt-5" id="donation-list">
-        <div class="row no-gutters align-items-center">
-          <div class="col-2 icon">
-            <img src="{{ wolf }}"/>
-          </div>
-          <div class="col title">
-            <h4>Coastal Ambassador <span class="pl-2 amount">$500</span></h4>
-          </div>
-        </div>
-      </div>
-      <div class="col pt-5 pb-4 px-4" id="donation-description">
-        <div class="row no-gutters align-items-center">
-          <p>Join the CleanUp team with this contribution that helps restore wildlife habitat in Clayoquot Sound.  You’ll be recognized as a Coastal Ambassador on our website and receive our seasonal newsletter</p>
-        </div>
-        <section class="row no-gutters align-items-center pt-3">
-          <div class="col input-wrap">
-            <input id="slide-toggle" type="checkbox" checked>
-            <label for="slide-toggle" id="slide-text" data-type="Annual">Annual</label>
-          </div>
-          <div class="col text-center">
-            <button class="btn btn-primary btn-lg" id="donate-button">Donate</button>
-          </div>
-        </section>
-      </div>
-    </div>
-  </div>
-  <div class="col-6 p-5">
+  {%- include donor_form.html -%}
   </div>
 </div>
 
