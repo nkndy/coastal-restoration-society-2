@@ -15,7 +15,7 @@ $muted: #BBC8D0;
 
 body {
   font-family: 'Montserrat', sans-serif;
-  color: #ffffff;
+  color: $body;
 }
 
 #back-button {
@@ -24,6 +24,110 @@ body {
   color: $muted;
   letter-spacing: 3px;
   display: none;
+}
+
+.donor {
+  position: absolute;
+  bottom: 50px;
+  left: 70px;
+  font-weight: 300;
+  h2 {
+    font-weight: 300;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+  }
+  .triangle-right {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 12.5px 0 12.5px 21.7px;
+      border-color: transparent transparent transparent $button;
+      transform: rotate(90deg);
+      margin-top: 6px;
+  }
+  .icon {
+     position: absolute;
+     color: white;
+     max-width: 30px;
+     position: absolute;
+     color: white;
+     max-width: 25px;
+     margin-left: 3px;
+  }
+  .donation-title {
+    letter-spacing: 2px;
+    font-size: 1.05em;
+  }
+  .active {
+    color: $button;
+  }
+  .donation-list {
+    border-top: 1px solid $muted;
+  }
+  .donation-description {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-top: 1px solid $muted;
+  }
+  // SWITCH
+  section {
+      label {
+        display: inline-block;
+        position: relative;
+        height: 44px;
+        width: 90px;
+        background-color: #fff;
+        width: 100%;
+        color: $body !important;
+        text-align: center;
+        padding-top: 10px;
+        margin-bottom: 0;
+      }
+      label {
+        cursor: pointer;
+        // font-size: 0;
+        color: transparent;
+        border-radius: 22px;
+      }
+      label:after {
+        content: '';
+        // color: rgba(255, 255, 255, 0) !important;
+        display: block;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        top: 2px;
+        right: 170px;
+        border-radius: 50%;
+        background-color: #e8e8e8;
+        box-shadow: 2px 0px 0px rgba(0,0,0,0.15);
+      }
+      input:checked + label {
+        background: #caeae8;
+      }
+      input:checked + label:after {
+        right: 2px;
+        background-color: #fff;
+        box-shadow: -2px 0px 0px rgba(0,0,0,0.1);
+      }
+      input {
+        position: absolute !important;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        bottom: 0;
+      }
+      label {
+        transition: background-color 500ms ease;
+        &:after {
+          transition: right 500ms ease,
+            background-color 500ms ease,
+            box-shadow 500ms ease;
+        }
+      }
+    }
 }
 
 .text--alt-color-dark {
@@ -44,89 +148,6 @@ body {
   .payment,
   .intro {
     height: 100vh;
-  }
-  .map {
-    h2 {
-      color: $donation-title;
-      font-weight: normal;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      border-bottom: 1px solid $moneyGreen;
-      padding-bottom: 0.5rem;
-      margin-bottom: 0px;
-    }
-    h4 {
-      margin-bottom: 0;
-      font-weight: normal;
-      font-size: 1.4em;
-      .amount {
-        letter-spacing: 3px;
-        color: $moneyGreen;
-      }
-    }
-
-    // SWITCH
-    section {
-        label {
-          display: inline-block;
-          position: relative;
-          height: 44px;
-          width: 90px;
-          background-color: #fff;
-          width: 100%;
-          color: $body !important;
-          text-align: center;
-          padding-top: 10px;
-          margin-bottom: 0;
-        }
-        label {
-          cursor: pointer;
-          // font-size: 0;
-          color: transparent;
-          border-radius: 22px;
-        }
-        label:after {
-          content: '';
-          // color: rgba(255, 255, 255, 0) !important;
-          display: block;
-          height: 40px;
-          width: 40px;
-          position: absolute;
-          top: 2px;
-          right: 160px;
-          border-radius: 50%;
-          background-color: #e8e8e8;
-          box-shadow: 2px 0px 0px rgba(0,0,0,0.15);
-        }
-        input:checked + label {
-          background: #caeae8;
-        }
-        input:checked + label:after {
-          right: 2px;
-          background-color: #fff;
-          box-shadow: -2px 0px 0px rgba(0,0,0,0.1);
-        }
-        input {
-          position: absolute !important;
-          width: 1px;
-          height: 1px;
-          overflow: hidden;
-          clip: rect(0, 0, 0, 0);
-          bottom: 0;
-        }
-        label {
-          transition: background-color 500ms ease;
-          &:after {
-            transition: right 500ms ease,
-              background-color 500ms ease,
-              box-shadow 500ms ease;
-          }
-        }
-      }
-
-    #donation-description {
-      background-color: rgba(255, 255, 255, 0.5);
-    }
   }
   &.intro {
     z-index: 4;
@@ -399,34 +420,4 @@ body {
   font-size: 0.8rem;
   border-radius: 50px;
   padding: 0.85rem 2.25rem;
-}
-
-#donor {
-  position: absolute;
-  width: 100%;
-  bottom: -80px;
-  left: 70px;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  font-weight: 300;
-  h2 {
-    font-weight: 400;
-    display: inline-block;
-  }
-  .triangle-right {
-      display: inline-block;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 12.5px 0 12.5px 21.7px;
-      border-color: transparent transparent transparent $button;
-      // transform: rotate(90deg);
-  }
-  ul {
-    list-style-type: none;
-    padding-left: 0;
-    li {
-      padding-bottom: 1em;
-    }
-  }
 }
