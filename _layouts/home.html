@@ -21,15 +21,3 @@ layout: default
 <section class="section container-fluid portal-page one" id="one">{% include portal_page_one.html %}</section>
 <section class="section container-fluid portal-page two" id="two" style='background-image: url("{{ mapfull }}");background-size: cover;background-position: bottom;'>{% include portal_page_two.html %}</section>
 <section class="section container-fluid portal-page three" id="three">{% include portal_page_three.html %}</section>
-
-<script type="text/javascript">
-$( ".donation-title" ).click(function(e) {
-  var target = $(e.target);
-	if ($(e.target).find( "i.active" ) == true) {
-		console.log("yes");
-	}
-	$( ".donation-tier" ).find( "i.active" ).removeClass( "active" );
-  target.siblings("i").addClass("active");
-});
-
-</script>

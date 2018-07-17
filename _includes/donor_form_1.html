@@ -1,0 +1,42 @@
+{% capture wave %}{{ 'uploads/wave_icon_white.png' | absolute_url }}{% endcapture %}
+{% capture salmon %}{{ 'uploads/salmon_icon_white.png' | absolute_url }}{% endcapture %}
+{% capture wolf %}{{ 'uploads/wolf_icon_white.png' | absolute_url }}{% endcapture %}
+{% capture orca %}{{ 'uploads/orca_icon_white.png' | absolute_url }}{% endcapture %}
+<!-- <img src="{{ wave }}" class="img-fluid"/> -->
+<div class="donor" id="df-1">
+  <div class="row no-gutters bad-button">
+    <h2 class="pb-2 pr-3 mb-0">Become a donor</h2>
+    <div class="triangle-right">
+    </div>
+  </div>
+  <div class="row no-gutters" style="height: 0;">
+    <div class="col-3 pt-4 donation-list">
+      <div class="row no-gutters">
+        <div class="col-12 pb-3 p-0 d-flex align-items-center donation-tier"><i class="fas fa-circle fa-2x pr-3"></i><span class="icon"><img src="{{ wave }}" class="img-fluid"/></span><span class="donation-title" id="coastalAmbassador">Coastal Ambassador</span></div>
+        <div class="col-12 pb-3 p-0 d-flex align-items-center donation-tier"><i class="fas fa-circle fa-2x pr-3"></i><span class="icon"><img src="{{ salmon }}" class="img-fluid"/></span><span class="donation-title" id="salmonSchool">Salmon School</span></div>
+        <div class="col-12 pb-3 p-0 d-flex align-items-center donation-tier"><i class="fas fa-circle fa-2x pr-3"></i><span class="icon"><img src="{{ wolf }}" class="img-fluid"/></span><span class="donation-title" id="wolfPack">Wolf Pack</span></div>
+        <div class="col-12 pb-3 p-0 d-flex align-items-center donation-tier"><i class="fas fa-circle fa-2x pr-3"></i><span class="icon"><img src="{{ orca }}" class="img-fluid"/></span><span class="donation-title" id="orcaPod">Orca Pod</span></div>
+        <div class="col-12 pb-3 p-0 d-flex align-items-center donation-tier"><i class="fas fa-circle fa-2x pr-3"></i><span class="icon"><img src="{{ wave }}" class="img-fluid"/></span><span class="donation-title" id="adoptCoastline">Adopt A Coastline</span></div>
+      </div>
+    </div>
+    <div class="col-3 p-4 donation-description hide">
+      <div class="row no-gutters align-items-center">
+        <div class="col">
+          <p>Join the CleanUp team with this contribution that helps restore wildlife habitat in Clayoquot Sound.  You’ll be recognized as a Coastal Ambassador on our website and receive our seasonal newsletter</p>
+        </div>
+      </div>
+      <section class="row no-gutters align-items-center pt-3">
+        <div class="col input-wrap">
+          <input id="slide-toggle-1" type="checkbox" checked>
+          <label for="slide-toggle-1" id="slide-text-1" data-type="Annual">Annual</label>
+        </div>
+        <div class="col text-center">
+          <button class="btn btn-primary btn-lg" id="donate-button-1">Donate</button>
+        </div>
+      </section>
+    </div>
+    <div class="col">
+
+    </div>
+  </div>
+</div>

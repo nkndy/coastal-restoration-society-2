@@ -1,24 +1,24 @@
 <div class="row align-items-center" style="height: 100vh;">
-  <div class="col">
+  <div class="col" id="match-2">
+    {%- include donor_form_2.html -%}
   </div>
 </div>
-{%- include donor_form.html -%}
 
 <script type="text/javascript">
-function donationType(type) {
-  var slideText = $('#slide-text');
+function donationTypeTwo(type) {
+  var slideText = $('#slide-text-2');
   // If the checkbox is checked, display the output text
   if (type == true){
     slideText.text("One Time");
-    slideText.data( "type", "OneTime" );
+    subscription = "OneTime"
   } else {
     slideText.text("Annual");
-    slideText.data( "type", "Annual" );
+    subscription = "Annual"
   }
 }
 
-$( "#slide-text" ).click(function() {
-  donationType($("#slide-toggle").is(':checked'));
+$( "#slide-text-2" ).click(function() {
+  donationTypeTwo($("#slide-toggle-2").is(':checked'));
 });
 
 </script>

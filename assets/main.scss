@@ -28,7 +28,7 @@ body {
 
 .donor {
   position: absolute;
-  bottom: 50px;
+  bottom: -50px;
   left: 70px;
   font-weight: 300;
   h2 {
@@ -44,8 +44,18 @@ body {
       border-style: solid;
       border-width: 12.5px 0 12.5px 21.7px;
       border-color: transparent transparent transparent $button;
-      transform: rotate(90deg);
       margin-top: 6px;
+      -webkit-transition: 300ms ease-in-out;
+      -moz-transition: 300ms ease-in-out;
+      -o-transition: 300ms ease-in-out;
+      transition: 300ms ease-in-out;
+      &.down {
+        transform: rotate(90deg);
+        -webkit-transition: 300ms ease-in-out;
+        -moz-transition: 300ms ease-in-out;
+        -o-transition: 300ms ease-in-out;
+        transition: 300ms ease-in-out;
+      }
   }
   .icon {
      position: absolute;
@@ -70,7 +80,18 @@ body {
     background-color: rgba(255, 255, 255, 0.9);
     border-top: 1px solid $muted;
   }
+  .hide {
+    opacity: 0;
+  }
+  &#df-1,
+  &#df-2 {
+    div:nth-of-type(2) {
+      overflow: hidden;
+      // height: 0;
+    }
+  }
   // SWITCH
+  &#df-1 {
   section {
       label {
         display: inline-block;
@@ -128,6 +149,66 @@ body {
         }
       }
     }
+  }
+  &#df-2 {
+  section {
+      label {
+        display: inline-block;
+        position: relative;
+        height: 44px;
+        width: 90px;
+        background-color: #fff;
+        width: 100%;
+        color: $body !important;
+        text-align: center;
+        padding-top: 10px;
+        margin-bottom: 0;
+      }
+      label {
+        cursor: pointer;
+        // font-size: 0;
+        color: transparent;
+        border-radius: 22px;
+      }
+      label:after {
+        content: '';
+        // color: rgba(255, 255, 255, 0) !important;
+        display: block;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        top: 2px;
+        right: 170px;
+        border-radius: 50%;
+        background-color: #e8e8e8;
+        box-shadow: 2px 0px 0px rgba(0,0,0,0.15);
+      }
+      input:checked + label {
+        background: #caeae8;
+      }
+      input:checked + label:after {
+        right: 2px;
+        background-color: #fff;
+        box-shadow: -2px 0px 0px rgba(0,0,0,0.1);
+      }
+      input {
+        position: absolute !important;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        bottom: 0;
+      }
+      label {
+        transition: background-color 500ms ease;
+        &:after {
+          transition: right 500ms ease,
+            background-color 500ms ease,
+            box-shadow 500ms ease;
+        }
+      }
+    }
+  }
 }
 
 .text--alt-color-dark {
@@ -382,7 +463,8 @@ body {
   }
 }
 
-.one {
+.one,
+.two {
   #description {
     border-top: 1px solid $muted;
     img {

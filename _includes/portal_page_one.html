@@ -3,7 +3,7 @@
 {% capture p2 %}{{ 'uploads/cc4.jpg' | absolute_url }}{% endcapture %}
 {% capture p3 %}{{ 'uploads/cc3.JPG' | absolute_url }}{% endcapture %}
 <div class="row align-items-center" style="height: 100vh;">
-  <div class="col">
+  <div class="col" id="match-1">
     <div class="row">
       <div class="col-4 pl-5">
         <h4 class="text-right title pb-3 pr-4 mb-4">Become A Coastal Amabssador</h4>
@@ -17,7 +17,8 @@
           </div>
           <div class="col">
             <p class="pl-4 pt-4 mb-5 pb-4">Clayoquot Sound needs your help! Ocean plastics and other forms of pollution are washing ashore with every tide. This garbage threatens all kinds of wildlife, Indigenous culture, and the communities that call Clayoquot Sound home
-              <!-- <br><br>Travel in our helicopter to remote beaches within Clayoquot Sound and help our rehabilitation efforts to Restore Our Shore. Help us preserve these important areas for breeding, nesting, and foraging for so many kinds of wildlife. Learn about this wildlife from your guide as you enjoy a spectacular aerial safari on the way home. -->
+              <!-- <br><br>Travel in our helicopter to remote islands within Clayoquot Sound and perform light- duty rehabilitation efforts to restore wildlife habitat. Help us preserve these important areas for breeding, nesting, and foraging for so many kinds of animals. Learn about the many species that call Clayoquot Sound home from your guide as you enjoy a spectacular aerial safari on the way home
+              <br><br>Book your Coastal Ambassador experience and help save wildlife during your stay in Clayoquot Sound! -->
             </p>
             <div id="explore" class="pr-1 text-right"><a href="" class="btn btn-primary btn-lg" id="explore-button">Take the next step</a></div>
           </div>
@@ -31,6 +32,25 @@
         </div>
       </div>
     </div>
+    {%- include donor_form_1.html -%}
   </div>
 </div>
-{%- include donor_form.html -%}
+
+<script type="text/javascript">
+function donationTypeOne(type) {
+  var slideText = $('#slide-text-1');
+  // If the checkbox is checked, display the output text
+  if (type == true){
+    slideText.text("One Time");
+    subscription = "OneTime"
+  } else {
+    slideText.text("Annual");
+    subscription = "Annual"
+  }
+}
+
+$( "#slide-text-1" ).click(function() {
+  donationTypeOne($("#slide-toggle-1").is(':checked'));
+});
+
+</script>

@@ -120,7 +120,7 @@ function submitForm(token) {
             "company_name": $('#FormControlInputCompany').val(),
             "phone": $('#FormControlInputPhone').val(),
             "plan": $('#plan-name').text(),
-            "subscriptionType": $('#slide-text').data( "type" )
+            "subscriptionType": subscription
           }
         }
     }).then(function(stripeCustomer) {
@@ -239,9 +239,16 @@ $('#explore-button').click(function(e) {
 	backButtonVisibility("map");
 	playSlide(false);
 });
-$('#donate-button').click(function(e) {
+$('#donate-button-1').click(function(e) {
 	e.preventDefault();
-	var str = $('#slide-text').text();
+	var str = $('#slide-text-1').text();
+	$("#subscription").html(str);
+	toggleMap();
+	backButtonVisibility("donate");
+});
+$('#donate-button-2').click(function(e) {
+	e.preventDefault();
+	var str = $('#slide-text-2').text();
 	$("#subscription").html(str);
 	toggleMap();
 	backButtonVisibility("donate");
@@ -439,3 +446,38 @@ function idleLogout() {
     }
 }
 idleLogout();
+
+var tallness = $("#match-1").height();
+$("#match-2").height(tallness);
+
+$('.bad-button h2').click(function(){
+  if ($(".bad-button + div ").height() == 0) {
+    $(".bad-button + div ").animate({
+      height: $(".bad-button + div").get(0).scrollHeight
+    });
+    $(".bad-button .triangle-right").toggleClass("down");
+  } else {
+    $(".bad-button + div ").animate({
+      height: 'toggle'
+    });
+    $(".bad-button .triangle-right").toggleClass("down");
+  }
+});
+
+$( ".donation-title" ).click(function(e) {
+  const coastalAmbassador = "Join the CleanUp team with this contribution that helps restore wildlife habitat in Clayoquot Sound.  You’ll be recognized as a Coastal Ambassador on our website and receive our seasonal newsletter.";
+  const salmonSchool = "Tailored for individuals who want to protect essential habitat for keystone species like salmon in Clayoquot Sound.  You’ll be recognized as a Coastal Ambassador on our website, receive our seasonal newsletter and a custom Coastal Ambassador t-shirt.";
+  const wolfPack = "Restoring habitat for bears and wolves is a large part of what motivates our rehabilitation efforts every year.  You’ll be recognized as a Coastal Ambassador on our website, receive our seasonal newsletter, and custom Coastal Ambassador t-shirts for the whole pack.";
+  const orcaPod = "First Nations legends claim that Orca’s are the protectors of our coastlines. As part of the Orca Pod you will have a critical role in ensuring that the most important wildlife habitat in Clayoquot Sound is protected from the harmful effects of ocean plastics and marine debris.";
+  const adoptCoastline = "Coming Soon! Your contributions keep our technicians on the ground, our boats on the water, and our helicopters in the air removing toxic pollutants from local wildlife habitat.";
+  var target = $(e.target);
+  if (target.siblings("i").hasClass( "active" ) != true) {
+    $( ".donation-tier" ).find( "i.active" ).removeClass( "active" );
+  }
+  target.siblings("i").toggleClass("active");
+  if (target.siblings("i").hasClass( "active" ) == true) {
+    $(".donation-description").removeClass("hide");
+  } else {
+    $(".donation-description").addClass("hide");
+  }
+});
