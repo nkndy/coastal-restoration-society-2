@@ -494,4 +494,5 @@ $( ".donation-title" ).click(function(e) {
   } else {
     $(".donation-description").addClass("hide");
   }
+  console.log(target.attr('id'));
 });
