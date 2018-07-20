@@ -27,10 +27,15 @@ body {
 }
 
 .donor {
+  display: none;
+  z-index: 10000;
   position: absolute;
-  bottom: -50px;
+  bottom: 60px;
   left: 70px;
   font-weight: 300;
+  p {
+    letter-spacing: 2px;
+  }
   h2 {
     font-weight: 300;
     display: inline-block;

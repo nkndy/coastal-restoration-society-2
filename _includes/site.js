@@ -263,10 +263,14 @@ $('.portal-page.intro').click(function(e) {
 // back button functionality
 
 function backButtonVisibility(location) {
-		if (location != "intro") {
+    if ( location ==  "donate" ) {
+      $('.donor').hide();
+    } else if (location != "intro") {
 			$('#back-button').show();
+      $('.donor').show();
 		} else {
 			$('#back-button').hide();
+      $('.donor').hide();
 		}
 }
 
