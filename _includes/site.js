@@ -480,9 +480,9 @@ $('.bad-button h2').click(function(){
 
 $( ".donation-title" ).click(function(e) {
   const coastalAmbassador = "Join the CleanUp team with this contribution that helps restore wildlife habitat in Clayoquot Sound.  You’ll be recognized as a Coastal Ambassador on our website and receive our seasonal newsletter.";
-  const salmonSchool = "Tailored for individuals who want to protect essential habitat for keystone species like salmon in Clayoquot Sound.  You’ll be recognized as a Coastal Ambassador on our website, receive our seasonal newsletter and a custom Coastal Ambassador t-shirt.";
-  const wolfPack = "Restoring habitat for bears and wolves is a large part of what motivates our rehabilitation efforts every year.  You’ll be recognized as a Coastal Ambassador on our website, receive our seasonal newsletter, and custom Coastal Ambassador t-shirts for the whole pack.";
-  const orcaPod = "First Nations legends claim that Orca’s are the protectors of our coastlines. As part of the Orca Pod you will have a critical role in ensuring that the most important wildlife habitat in Clayoquot Sound is protected from the harmful effects of ocean plastics and marine debris.";
+  const salmonSchool = "Tailored for individuals who want to protect essential habitat for keystone species like salmon in Clayoquot Sound.  You’ll be recognized on our website, receive our seasonal newsletter and a custom Coastal Ambassador t-shirt.";
+  const wolfPack = "Restoring habitat for bears and wolves is a large part of what motivates our rehabilitation efforts every year.  You’ll be recognized on our website, receive our seasonal newsletter, and custom Coastal Ambassador t-shirts for the whole pack.";
+  const orcaPod = "First Nations legends claim Orca’s are the protectors of our coast. As part of the Orca Pod you will have a critical role in ensuring that the most important habitat in Clayoquot Sound is protected from the harmful effects of ocean plastics.";
   const adoptCoastline = "Coming Soon! Your contributions keep our technicians on the ground, our boats on the water, and our helicopters in the air removing toxic pollutants from local wildlife habitat.";
   var target = $(e.target);
   if (target.siblings("i").hasClass( "active" ) != true) {
@@ -494,5 +494,26 @@ $( ".donation-title" ).click(function(e) {
   } else {
     $(".donation-description").addClass("hide");
   }
-  console.log(target.attr('id'));
+  function getText(id) {
+    switch (id) {
+      case "coastalAmbassador":
+        return coastalAmbassador
+        break;
+      case "salmonSchool":
+        return salmonSchool
+        break;
+      case "wolfPack":
+        return wolfPack
+        break;
+      case "orcaPod":
+        return orcaPod
+        break;
+      case "adoptCoastline":
+        return adoptCoastline
+        break;
+      default:
+        return coastalAmbassador
+    }
+  }
+  $('.donation-description p').text(getText(target.attr('id')));
 });
