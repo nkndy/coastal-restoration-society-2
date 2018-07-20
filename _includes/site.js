@@ -243,6 +243,7 @@ $('#donate-button-1').click(function(e) {
 	e.preventDefault();
 	var str = $('#slide-text-1').text();
 	$("#subscription").html(str);
+  toggleInfo();
 	toggleMap();
 	backButtonVisibility("donate");
 });
