@@ -37,22 +37,3 @@
 {% comment %}
 {%- include donor_form_1.html -%}
 {% endcomment %}
-
-<script type="text/javascript">
-function donationTypeOne(type) {
-  var slideText = $('#slide-text-1');
-  // If the checkbox is checked, display the output text
-  if (type == true){
-    slideText.text("One Time");
-    subscription = "OneTime"
-  } else {
-    slideText.text("Annual");
-    subscription = "Annual"
-  }
-}
-
-$( "#slide-text-1" ).click(function() {
-  donationTypeOne($("#slide-toggle-1").is(':checked'));
-});
-
-</script>

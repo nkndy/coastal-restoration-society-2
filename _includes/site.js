@@ -2,6 +2,22 @@
 {% capture p2 %}{{ 'uploads/cc4.jpg' | absolute_url }}{% endcapture %}
 {% capture p3 %}{{ 'uploads/cc3.JPG' | absolute_url }}{% endcapture %}
 
+function donationTypeOne(type) {
+  var slideText = $('#slide-text-1');
+  // If the checkbox is checked, display the output text
+  if (type == true){
+    slideText.text("One Time");
+    subscription = "OneTime"
+  } else {
+    slideText.text("Annual");
+    subscription = "Annual"
+  }
+}
+
+$( "#slide-text-1" ).click(function() {
+  donationTypeOne($("#slide-toggle-1").is(':checked'));
+});
+
 // Create a Stripe client.
 var stripe = Stripe('pk_test_sVOSwu1mjrLOs2C6m9Gjia8t');
 
@@ -243,15 +259,6 @@ $('#donate-button-1').click(function(e) {
 	e.preventDefault();
 	var str = $('#slide-text-1').text();
 	$("#subscription").html(str);
-  toggleInfo();
-	toggleMap();
-	backButtonVisibility("donate");
-});
-$('#donate-button-2').click(function(e) {
-	e.preventDefault();
-	var str = $('#slide-text-2').text();
-	$("#subscription").html(str);
-	toggleMap();
 	backButtonVisibility("donate");
 });
 $('.portal-page.intro').click(function(e) {
@@ -265,6 +272,8 @@ $('.portal-page.intro').click(function(e) {
 function backButtonVisibility(location) {
     if ( location ==  "donate" ) {
       $('.donor').hide();
+      $('#one').hide();
+      $('#two').hide();
     } else if (location != "intro") {
 			$('#back-button').show();
       $('.donor').show();
