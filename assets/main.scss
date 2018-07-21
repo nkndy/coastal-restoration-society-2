@@ -229,6 +229,7 @@ body {
 .portal-page {
   background-color: $brand-background;
   color: $body;
+  position: absolute;
   .info,
   .map,
   .payment,

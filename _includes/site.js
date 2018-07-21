@@ -2,6 +2,8 @@
 {% capture p2 %}{{ 'uploads/cc4.jpg' | absolute_url }}{% endcapture %}
 {% capture p3 %}{{ 'uploads/cc3.JPG' | absolute_url }}{% endcapture %}
 
+var subscription = "Annual";
+
 function donationTypeOne(type) {
   var slideText = $('#slide-text-1');
   // If the checkbox is checked, display the output text
