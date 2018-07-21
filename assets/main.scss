@@ -516,7 +516,7 @@ body {
     background-color: $donation-title;
     border-radius: 100% 100% 100% 0;
     color: white;
-    &.one {
+    &#one {
       top: 70px;
       left: 475px;
     }
