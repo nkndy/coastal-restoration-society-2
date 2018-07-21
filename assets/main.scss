@@ -509,3 +509,40 @@ body {
   border-radius: 50px;
   padding: 0.85rem 2.25rem;
 }
+
+.two {
+  .poi {
+    position: absolute;
+    background-color: $donation-title;
+    border-radius: 100% 100% 100% 0;
+    color: white;
+    &#one {
+      top: 70px;
+      left: 475px;
+    }
+    &#two {
+      top: 175px;
+      left: 750px;
+    }
+    &#three {
+      top: 100px;
+      left: 1325px;
+    }
+    &#four {
+      top: 350px;
+      left: 825px;
+    }
+    &#five {
+      top: 500px;
+      left: 1125px;
+    }
+    &#six {
+      top: 600px;
+      left: 1300px;
+    }
+    &#seven {
+      top: 750px;
+      left: 1450px;
+    }
+  }
+}

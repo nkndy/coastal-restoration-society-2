@@ -283,16 +283,16 @@ function getPlan(str) {
 function getAmount(str) {
   switch (str) {
     case "coastalAmbassador":
-      return "500"
+      return "$500"
       break;
     case "salmonSchool":
-      return "1500"
+      return "$1500"
       break;
     case "wolfPack":
-      return "5000"
+      return "$5000"
       break;
     case "orcaPod":
-      return "25000"
+      return "$25000"
       break;
     // case "adoptCoastline":
     //   return "n/a"
