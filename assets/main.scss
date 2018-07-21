@@ -20,7 +20,7 @@ body {
 
 #back-button {
   position: absolute;
-  z-index: 10000;
+  z-index: 1040;
   color: $muted;
   letter-spacing: 3px;
   display: none;
@@ -28,7 +28,7 @@ body {
 
 .donor {
   display: none;
-  z-index: 10000;
+  z-index: 1039;
   position: absolute;
   bottom: 60px;
   left: 70px;
@@ -550,8 +550,33 @@ body {
 // MODAL STYLES
 
 .modal-content {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-radius: 0;
   .modal-header,
+  .modal-body,
   .modal-footer {
     border: none;
+    background-color: white;
+    border-radius: 0;
   }
+  .close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    padding: 10px 17px;
+    background: rgba(255,255,255,1);
+    border-radius: 50%;
+    color: black;
+  }
+  .modal-body {
+    p {
+      font-size: 0.875rem;
+      line-height: 1.65;
+    }
+  }
+}
+
+.modal-lg {
+    max-width: 1200px !important;
 }

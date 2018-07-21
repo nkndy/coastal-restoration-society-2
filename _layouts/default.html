@@ -8,10 +8,12 @@
       {%- include header.html -%}
     {%- endcomment -%}
 
+    {% capture modal2img %}{{ 'uploads/map_whale.jpg' | absolute_url }}{% endcapture %}
+
     <!-- Modal 1 -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
+    <div class="modal fade" id="modal-1" tabindex="-1" role="dialog" aria-labelledby="modal1Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content p-4">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -19,9 +21,37 @@
             </button>
           </div>
           <div class="modal-body">
-            ...
+            1
           </div>
-          <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal fade" id="modal-2" tabindex="-1" role="dialog" aria-labelledby="modal2Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content p-4">
+          <div class="modal-header pb-0 pt-4">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-4">
+                  <h5 class="modal-title text-right text-uppercase" id="exampleModalLabel">Modal title</h5>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-4 text-right">
+                  <p class="pt-3">Humpback Whales are the largest mammals to visit Clayoquot Sound every season.  From the months of May through September Humpbacks are commonly spotted lunge feeding on herring and krill along the western shores of Flores Island and Hesquiaht Harbour.   They consume vast quantities of fish and krill each day and in the process they ingest ocean plastics and other forms of synthetic pollutants.  Whales have recently washed ashore around the world that have perished as a result of clogged digestive systems from ocean plastics.  Humpbacks also suffer from entanglement in discarded commercial fishing equipment and nets and ropes utilized by marine-related industries.  Coastal Ambassadors work to protect Humpback whale habitat by removing ocean plastics from important foraging areas for Humpback whales in Clayoquot Sound.  </p>
+                </div>
+                <div class="col"><img src="{{ modal2img }}" class="img-fluid" alt="Responsive image"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
