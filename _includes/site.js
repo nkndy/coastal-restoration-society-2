@@ -306,7 +306,7 @@ $('#donate-button-1').click(function(e) {
   var planStr = $(target.siblings(".donation-title"));
   planStr = planStr.attr("id");
   $("#plan-name").html(getPlan(planStr));
-  $("#amount").text("sexy");
+  $("#amount").text(getAmount(planStr));
 
 	var subscriptionStr = $('#slide-text-1').text();
 	$("#subscription").html(subscriptionStr);
