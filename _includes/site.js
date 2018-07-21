@@ -255,10 +255,62 @@ $('#explore-button').click(function(e) {
 	backButtonVisibility("map");
 	playSlide(false);
 });
+
+function getPlan(str) {
+  switch (str) {
+    case "coastalAmbassador":
+      return "Coastal Ambassador"
+      break;
+    case "salmonSchool":
+      return "Salmon School"
+      break;
+    case "wolfPack":
+      return "Wolf Pack"
+      break;
+    case "orcaPod":
+      return "Orca Pod"
+      break;
+    case "adoptCoastline":
+      return "Adopt A Coastline"
+      break;
+    default:
+      return coastalAmbassador
+  }
+}
+
+function getAmount(str) {
+  switch (str) {
+    case "coastalAmbassador":
+      return "500"
+      break;
+    case "salmonSchool":
+      return "1500"
+      break;
+    case "wolfPack":
+      return "5000"
+      break;
+    case "orcaPod":
+      return "25000"
+      break;
+    // case "adoptCoastline":
+    //   return "n/a"
+    //   break;
+    default:
+      return coastalAmbassador
+  }
+}
+
 $('#donate-button-1').click(function(e) {
 	e.preventDefault();
-	var str = $('#slide-text-1').text();
-	$("#subscription").html(str);
+  var target = $( ".donation-tier" ).find( "i.active" );
+  var planStr = $(target.siblings(".donation-title"));
+  planStr = planStr.attr("id");
+  $("#plan-name").html(getPlan(planStr));
+  $("#amount").text("sexy");
+
+	var subscriptionStr = $('#slide-text-1').text();
+	$("#subscription").html(subscriptionStr);
+
 	backButtonVisibility("donate");
 });
 $('.portal-page.intro').click(function(e) {
