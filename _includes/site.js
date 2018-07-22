@@ -427,6 +427,12 @@ $( ".donation-title" ).click(function(e) {
   } else {
     $(".donation-description").addClass("hide");
   }
+  if (target.is("#adoptCoastline")) {
+    $('.donation-description section.row').addClass('hide');
+  } else {
+    $('.donation-description section.row').removeClass('hide');
+  }
+
   function getText(id) {
     switch (id) {
       case "coastalAmbassador":
