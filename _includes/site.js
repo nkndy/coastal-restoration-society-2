@@ -344,7 +344,6 @@ $('#back-button').click(function(e) {
 });
 
 var activePlayer = new Vimeo.Player(document.getElementById('p1-video-1'));
-var fromPlayer;
 
 function playP1Video(playSlide) {
   // get current video
@@ -366,7 +365,6 @@ function idleLogout() {
     window.addEventListener('scroll', resetTimer, true); // improved; see comments
 
     function yourFunction() {
-			console.log("timeout");
       $("#payment-form").trigger("reset");
       card.clear();
 			if ( $('.portal-page.two').css('display') == 'none' ){
@@ -383,6 +381,7 @@ function idleLogout() {
 				toggleIntro();
 				playP1Video(false);
 			}
+      $(".poi-col #one").addClass("heartbeat");
       restartForm();
         // your function for too long inactivity goes here
         // e.g. window.location.href = 'logout.php';
@@ -451,3 +450,20 @@ $( ".donation-title" ).click(function(e) {
   }
   $('.donation-description p').text(getText(target.attr('id')));
 });
+
+var modalPlayer1 = new Vimeo.Player(document.getElementById('p2-video-1'));
+$('#modal-1').on('show.bs.modal', function (e) {
+  $(".poi-col #one").removeClass("heartbeat");
+  modalPlayer1.play();
+})
+$('#modal-1').on('hidden.bs.modal', function (e) {
+  modalPlayer1.pause();
+})
+
+var modalPlayer2 = new Vimeo.Player(document.getElementById('p2-video-2'));
+$('#modal-6').on('show.bs.modal', function (e) {
+  modalPlayer2.play();
+})
+$('#modal-6').on('hidden.bs.modal', function (e) {
+  modalPlayer2.pause();
+})
