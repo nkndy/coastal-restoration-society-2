@@ -348,6 +348,11 @@ var activePlayer = new Vimeo.Player(document.getElementById('p1-video-1'));
 function playP1Video(playSlide) {
   // get current video
 	if ( playSlide == true )  {
+    activePlayer.on('play', function(data) {
+      if (data.seconds != 0) {
+          activePlayer.setCurrentTime(0);
+      }
+    });
 	  activePlayer.play()
 	} else {
 		activePlayer.pause()
@@ -460,14 +465,24 @@ $( ".donation-title" ).click(function(e) {
 var modalPlayer1 = new Vimeo.Player(document.getElementById('p2-video-1'));
 $('#modal-1').on('show.bs.modal', function (e) {
   $(".poi-col #one").removeClass("heartbeat");
+  modalPlayer1.on('play', function(data) {
+    if (data.seconds != 0) {
+        modalPlayer1.setCurrentTime(0);
+    }
+  });
   modalPlayer1.play();
-})
+});
 $('#modal-1').on('hidden.bs.modal', function (e) {
   modalPlayer1.pause();
 })
 
 var modalPlayer2 = new Vimeo.Player(document.getElementById('p2-video-2'));
 $('#modal-6').on('show.bs.modal', function (e) {
+  modalPlayer2.on('play', function(data) {
+    if (data.seconds != 0) {
+        modalPlayer2.setCurrentTime(0);
+    }
+  });
   modalPlayer2.play();
 })
 $('#modal-6').on('hidden.bs.modal', function (e) {
