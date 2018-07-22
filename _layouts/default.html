@@ -8,7 +8,9 @@
       {%- include header.html -%}
     {%- endcomment -%}
 
-    {% capture modal2img %}{{ 'uploads/map_whale.jpg' | absolute_url }}{% endcapture %}
+    {% capture modal-2img %}{{ 'uploads/map_whale.jpg' | absolute_url }}{% endcapture %}
+    {% capture modal-3img %}{{ 'uploads/map_salmon.jpg' | absolute_url }}{% endcapture %}
+    {% capture modal-4img %}{{ 'uploads/map_orca.jpg' | absolute_url }}{% endcapture %}
 
     <!-- Modal 1 -->
     <div class="modal fade" id="modal-1" tabindex="-1" role="dialog" aria-labelledby="modal1Label" aria-hidden="true">
@@ -28,14 +30,14 @@
     </div>
 
     <!-- Modal 2 -->
-    <div class="modal fade" id="modal-2" tabindex="-1" role="dialog" aria-labelledby="modal2Label" aria-hidden="true">
+    <div class="modal fade" id="modal-2" tabindex="-1" role="dialog" aria-labelledby="modal-2Label" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content p-4">
           <div class="modal-header pb-0 pt-4">
             <div class="container-fluid">
               <div class="row">
                 <div class="col-4">
-                  <h5 class="modal-title text-right text-uppercase" id="exampleModalLabel">Modal title</h5>
+                  <h5 class="modal-title text-right text-uppercase pt-2 pr-3 pb-2" id="modal-2Label">Save Humpbacks</h5>
                 </div>
               </div>
             </div>
@@ -49,7 +51,69 @@
                 <div class="col-4 text-right">
                   <p class="pt-3">Humpback Whales are the largest mammals to visit Clayoquot Sound every season.  From the months of May through September Humpbacks are commonly spotted lunge feeding on herring and krill along the western shores of Flores Island and Hesquiaht Harbour.   They consume vast quantities of fish and krill each day and in the process they ingest ocean plastics and other forms of synthetic pollutants.  Whales have recently washed ashore around the world that have perished as a result of clogged digestive systems from ocean plastics.  Humpbacks also suffer from entanglement in discarded commercial fishing equipment and nets and ropes utilized by marine-related industries.  Coastal Ambassadors work to protect Humpback whale habitat by removing ocean plastics from important foraging areas for Humpback whales in Clayoquot Sound.  </p>
                 </div>
-                <div class="col"><img src="{{ modal2img }}" class="img-fluid" alt="Responsive image"></div>
+                <div class="col"><img src="{{ modal-2img }}" class="img-fluid" alt="Responsive image"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="modal fade" id="modal-3" tabindex="-1" role="dialog" aria-labelledby="modal-3Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content p-4">
+          <div class="modal-header pb-0 pt-4">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-4">
+                  <h5 class="modal-title text-right text-uppercase pt-2 pr-3 pb-2" id="modal-3Label">Salmon Habitat</h5>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-4 text-right">
+                  <p class="pt-3">
+                    Salmon are a keystone species in the Pacific Northwest and in Clayoquot Sound they are responsible for maintaining the balance fo the entire ecosystem.  Coastal First Nations have depended upon salmon for sustenance for tens of thousands of years. Salmon also provide food sources for species like Orcas, bears, eagles and wolves, connecting wildlife to the oceans and forests that surround us here in Clayoquot Sound.  Salmon are the thread that weaves all of the many peoples and wildlife species of our coastal regions together, nurturing our bodies with protein and providing essential nutrients from which the entire ecosystem thrives.  Ocean plastics are a significant threat to the health of salmon runs throughout the entirety of Clayoquot Sound.  Juvenile salmon migrating from their natal rivers to the open ocean pass through the intertidal migratory corridors where ocean plastics and pollution accumulates.  These tiny salmonids ingest plastic and toxic pollutants and perish by the hundreds of thousands every year. Rehabilitating migratory corridors for salmonids is a top priority for the Coastal Ambassador program.  
+                  </p>
+                </div>
+                <div class="col"><img src="{{ modal-3img }}" class="img-fluid" alt="Responsive image"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div class="modal fade" id="modal-4" tabindex="-1" role="dialog" aria-labelledby="modal-4Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content p-4">
+          <div class="modal-header pb-0 pt-4">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-4">
+                  <h5 class="modal-title text-right text-uppercase pt-2 pr-3 pb-2" id="modal-4Label">Orca (Killer) Whales</h5>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-4 text-right">
+                  <p class="pt-3">Orca (Killer) Whales are an iconic specie and widely recognized member of the Clayoquot Sound eco-system.  Renown for their majestic grace the Orca is an apex predator that utilizes the waters of Clayoquot Sound for foraging, breeding and rearing their young.  Two types of Orcas are commonly found in our local waters.  Transient Orcas feed predominately on seals, sea lions, porpoise and grey whale claves while Resident Orcas are mostly on the prowl for chinook salmon and other kinds of fish.  Orcas are highly social animals and travel in matriarchal pods utilizing the waters of Clayoquot Sound throughout the year.  Ocean plastics threaten Orcas and have caused a decline in Orca populations.  To help Orcas rebuild their numbers it’s critical that Coastal Ambassadors work to remove toxic pollutants from important Orca habitat here in Clayoquot Sound.</p>
+                </div>
+                <div class="col"><img src="{{ modal-4img }}" class="img-fluid" alt="Responsive image"></div>
               </div>
             </div>
           </div>

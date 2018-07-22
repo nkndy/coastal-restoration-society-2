@@ -575,8 +575,32 @@ body {
       line-height: 1.65;
     }
   }
+  .modal-header {
+    h5 {
+      letter-spacing: 1px;
+      font-size: 1rem;
+      font-weight: bolder;
+      color: $donation-title;
+      margin-left: -55px;
+      border-bottom: 1px solid $muted;
+      border-right: 1px solid $muted;
+    }
+  }
 }
 
 .modal-lg {
     max-width: 1200px !important;
+}
+
+.modal.fade .modal-dialog
+{
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+    -o-transform: none !important;
+    -webkit-transform: none !important;
+    transform: none !important;
 }
