@@ -104,17 +104,6 @@ function retry() {
 var resetForm = document.getElementById('reset-form');
 resetForm.addEventListener("click", retry);
 
-// <div id="status-container" style="display: none;">
-//   <div id="spinner" class="animated" style="display: none;"></div>
-//   <div id="transaction-fail" style="display: none;"><i class="fas fa-exclamation"></i></div>
-//   <div class="p-4" id="status-msg"></div>
-//   <div id="reset-form" class="text-center pt-1" style="display: none;"><i class="fas fa-redo-alt fa-2x"></i></div>
-// </div>
-// <div id="success-container" style="display: none;">
-//   <div class="spinner-success"><i class="fas fa-check"></i></div>
-//   <div class="p-4 text-center" id="success-msg" style="display: none;"></div>
-// </div>
-
 function restartForm() {
   $('#payment-form').css('display', 'initial');
   $('#spinner').css('display', 'none');
@@ -255,7 +244,7 @@ $('#explore-button').click(function(e) {
 	e.preventDefault();
 	toggleInfo();
 	backButtonVisibility("map");
-	playSlide(false);
+	playP1Video(false);
 });
 
 function getPlan(str) {
@@ -318,7 +307,7 @@ $('#donate-button-1').click(function(e) {
 $('.portal-page.intro').click(function(e) {
 	toggleIntro();
 	backButtonVisibility("video");
-	playSlide(true);
+	playP1Video(true);
 });
 
 // back button functionality
@@ -344,131 +333,22 @@ $('#back-button').click(function(e) {
 	} else if ( $('.portal-page.one').css('display') == 'none' ) {
 		backButtonVisibility("info")
 		toggleInfo();
-		playSlide(true);
+		playP1Video(true);
 	} else if ( $('.portal-page.intro').css('display') == 'none' ) {
 		backButtonVisibility("intro")
 		toggleIntro();
-		playSlide(false);
+		playP1Video(false);
 	} else {
 		// do nothing
 	}
 });
 
-var iframes = document.querySelectorAll('iframe');
-
-var activePlayer = new Vimeo.Player(iframes[0]);
+var activePlayer = new Vimeo.Player(document.getElementById('p1-video-1'));
 var fromPlayer;
 
-// function updateContent(txt, title) {
-//   var dTitle = $('#title h4');
-//   var description = $('#description p');
-//   dTitle.text(title);
-//   description.html(txt);
-// }
-
-// function switchVideo(currentIndex, previousIndex) {
-//
-//   activePlayer = new Vimeo.Player(iframes[currentIndex]);
-//   fromPlayer = new Vimeo.Player(iframes[previousIndex]);
-//
-//   activePlayer.play().then(function() {
-//       // the video was played
-//   }).catch(function(error) {
-//       switch (error.name) {
-//           case 'PasswordError':
-//               // the video is password-protected and the viewer needs to enter the
-//               // password first
-//               break;
-//
-//           case 'PrivacyError':
-//               // the video is private
-//               break;
-//
-//           default:
-//               // some other error occurred
-//               break;
-//       }
-//   });
-//
-//   fromPlayer.pause().then(function() {
-//       // the video was paused
-//   }).catch(function(error) {
-//       switch (error.name) {
-//           case 'PasswordError':
-//               // the video is password-protected and the viewer needs to enter the
-//               // password first
-//               break;
-//
-//           case 'PrivacyError':
-//               // the video is private
-//               break;
-//
-//           default:
-//               // some other error occurred
-//               break;
-//       }
-//   });
-// }
-
-// function changeImages(currentIndex, previousIndex) {
-//   var img1;
-//   var img2;
-//   var txt;
-//   var title;
-//   switch (currentIndex) {
-//     case 0:
-//       img1 = "{{ p1 }}";
-//       img2 = "{{ p2 }}";
-//       txt = "Clayoquot Sound needs your help! Ocean plastics and other forms of pollution are washing ashore with every tide. This garbage threatens all kinds of wildlife, Indigenous culture, and the communities that call Clayoquot Sound home. Become a Coastal Ambassador and help protect this wonderful coast with us!<br><br>Travel in our helicopter to remote beaches within Clayoquot Sound and help our rehabilitation efforts to Restore Our Shore. Help us preserve these important areas for breeding, nesting, and foraging for so many kinds of wildlife. Learn about this wildlife from your guide as you enjoy a spectacular aerial safari on the way home.";
-//       title = "Who we are";
-//       updateContent(txt, title);
-//       break;
-//     case 1:
-//       img1 = "{{ p2 }}";
-//       img2 = "{{ p3 }}";
-//       txt = "Clayoquot CleanUp is a world leader in marine habitat restoration.  Specializing in emergency spill response, accumulated debris removal, and aquaculture site deconstruction and removal our team of technical experts possess advanced training and experience that assures successful restoration of demanding marine environments.";
-//       title = "What we do";
-//       updateContent(txt, title);
-//       break;
-//     case 2:
-//       img1 = "{{ p3 }}";
-//       img2 = "{{ p1 }}";
-//       txt = "Home to First Nations communities (Hesquiaht, Ahousaht, Tla-o-qui-aht) the District of Tofino, a plethora of visitors, part time residents and colorful characters, the biodiversity of our landscape is mirrored closely by the diversity of its human inhabitants.  Drawing from this diversity and the reliance we have upon the industries of fishing, aquaculture and eco-tourism, the link is clear between healthy landscapes and thriving wildlife and sustainable economic growth and development. <br><br>Clayoquot Sound acts as an aggregator for ocean plastics and marine debris from both domestic and international sources. Commercial fishing gear, jettisoned shipping containers, styrofoam insulation and household plastics are all prevalent examples of pollution that is turning Clayoquot Sound into a landfill.   As a result, cetaceans and other wildlife combat entanglement as a way of life. Whales perish in lost fishing gear, birds choke on plastics mistaken for food and ntegrity of the ecosystem as a whole declines.";
-//       title = "Why clean up";
-//       updateContent(txt, title);
-//       break;
-//   }
-//   $(".carousel-control-prev").stop().animate({ opacity: 0 }, 150, function(){
-//     $(this).css({'background-image': "url("+img1+")"})
-//              .animate({ opacity: 1 },{ duration: 150 });
-//   });
-//   $(".carousel-control-next").stop().animate({ opacity: 0 }, 150, function(){
-//     $(this).css({'background-image': "url("+img2+")"})
-//              .animate({ opacity: 1 },{ duration: 150 });
-//   });
-// }
-
-// var videoCarousel = $('#videoCarousel');
-// videoCarousel.carousel({
-//   interval: false
-// })
-
-// videoCarousel.on('slid.bs.carousel', function (e) {
-//   if (e.to === 0) {
-//     changeImages(e.to, e.from)
-//     switchVideo(e.to, e.from);
-//   } else if (e.to == 1) {
-//     changeImages(e.to, e.from)
-//     switchVideo(e.to, e.from);
-//   } else if (e.to == 2) {
-//     changeImages(e.to, e.from)
-//     switchVideo(e.to, e.from);
-//   }
-// })
-
-function playSlide(correctSlide) {
+function playP1Video(playSlide) {
   // get current video
-	if ( correctSlide == true )  {
+	if ( playSlide == true )  {
 	  activePlayer.play()
 	} else {
 		activePlayer.pause()
@@ -496,12 +376,12 @@ function idleLogout() {
 			if ( $('.portal-page.one').css('display') == 'none' ) {
 				backButtonVisibility("info")
 				toggleInfo();
-				playSlide(true);
+				playP1Video(true);
 			}
 			if ( $('.portal-page.intro').css('display') == 'none' ) {
 				backButtonVisibility("intro")
 				toggleIntro();
-				playSlide(false);
+				playP1Video(false);
 			}
       restartForm();
         // your function for too long inactivity goes here

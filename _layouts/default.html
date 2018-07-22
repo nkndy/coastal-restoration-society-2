@@ -11,19 +11,17 @@
     {% capture modal-2img %}{{ 'uploads/map_whale.jpg' | absolute_url }}{% endcapture %}
     {% capture modal-3img %}{{ 'uploads/map_salmon.jpg' | absolute_url }}{% endcapture %}
     {% capture modal-4img %}{{ 'uploads/map_orca.jpg' | absolute_url }}{% endcapture %}
+    {% capture modal-5img %}{{ 'uploads/map_cier.jpg' | absolute_url }}{% endcapture %}
+    {% capture modal-7img %}{{ 'uploads/map_crs.jpg' | absolute_url }}{% endcapture %}
 
     <!-- Modal 1 -->
     <div class="modal fade" id="modal-1" tabindex="-1" role="dialog" aria-labelledby="modal1Label" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content p-4">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
           <div class="modal-body">
-            1
+            <div class="embed-responsive embed-responsive-16by9" id="v1">
+              <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/276692226?loop=1" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+            </div>
           </div>
         </div>
       </div>
@@ -37,7 +35,7 @@
             <div class="container-fluid">
               <div class="row">
                 <div class="col-4">
-                  <h5 class="modal-title text-right text-uppercase pt-2 pr-3 pb-2" id="modal-2Label">Save Humpbacks</h5>
+                  <h5 class="modal-title text-right text-uppercase pt-2 pr-3 pb-2" id="modal-2Label">Humpback Whales</h5>
                 </div>
               </div>
             </div>
@@ -80,7 +78,7 @@
               <div class="row">
                 <div class="col-4 text-right">
                   <p class="pt-3">
-                    Salmon are a keystone species in the Pacific Northwest and in Clayoquot Sound they are responsible for maintaining the balance fo the entire ecosystem.  Coastal First Nations have depended upon salmon for sustenance for tens of thousands of years. Salmon also provide food sources for species like Orcas, bears, eagles and wolves, connecting wildlife to the oceans and forests that surround us here in Clayoquot Sound.  Salmon are the thread that weaves all of the many peoples and wildlife species of our coastal regions together, nurturing our bodies with protein and providing essential nutrients from which the entire ecosystem thrives.  Ocean plastics are a significant threat to the health of salmon runs throughout the entirety of Clayoquot Sound.  Juvenile salmon migrating from their natal rivers to the open ocean pass through the intertidal migratory corridors where ocean plastics and pollution accumulates.  These tiny salmonids ingest plastic and toxic pollutants and perish by the hundreds of thousands every year. Rehabilitating migratory corridors for salmonids is a top priority for the Coastal Ambassador program.  
+                    Salmon are a keystone species in the Pacific Northwest and in Clayoquot Sound they are responsible for maintaining the balance fo the entire ecosystem.  Coastal First Nations have depended upon salmon for sustenance for tens of thousands of years. Salmon also provide food sources for species like Orcas, bears, eagles and wolves, connecting wildlife to the oceans and forests that surround us here in Clayoquot Sound.  Salmon are the thread that weaves all of the many peoples and wildlife species of our coastal regions together, nurturing our bodies with protein and providing essential nutrients from which the entire ecosystem thrives.  Ocean plastics are a significant threat to the health of salmon runs throughout the entirety of Clayoquot Sound.  Juvenile salmon migrating from their natal rivers to the open ocean pass through the intertidal migratory corridors where ocean plastics and pollution accumulates.  These tiny salmonids ingest plastic and toxic pollutants and perish by the hundreds of thousands every year. Rehabilitating migratory corridors for salmonids is a top priority for the Coastal Ambassador program.
                   </p>
                 </div>
                 <div class="col"><img src="{{ modal-3img }}" class="img-fluid" alt="Responsive image"></div>
@@ -114,6 +112,87 @@
                   <p class="pt-3">Orca (Killer) Whales are an iconic specie and widely recognized member of the Clayoquot Sound eco-system.  Renown for their majestic grace the Orca is an apex predator that utilizes the waters of Clayoquot Sound for foraging, breeding and rearing their young.  Two types of Orcas are commonly found in our local waters.  Transient Orcas feed predominately on seals, sea lions, porpoise and grey whale claves while Resident Orcas are mostly on the prowl for chinook salmon and other kinds of fish.  Orcas are highly social animals and travel in matriarchal pods utilizing the waters of Clayoquot Sound throughout the year.  Ocean plastics threaten Orcas and have caused a decline in Orca populations.  To help Orcas rebuild their numbers it’s critical that Coastal Ambassadors work to remove toxic pollutants from important Orca habitat here in Clayoquot Sound.</p>
                 </div>
                 <div class="col"><img src="{{ modal-4img }}" class="img-fluid" alt="Responsive image"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 5 -->
+    <div class="modal fade" id="modal-5" tabindex="-1" role="dialog" aria-labelledby="modal-5Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content p-4">
+          <div class="modal-header pb-0 pt-4">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-4">
+                  <h5 class="modal-title text-right text-uppercase pt-2 pr-3 pb-2" id="modal-5Label">CIER Project</h5>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-4 text-right">
+                  <p class="pt-3">
+                    Habitat restoration is the primary goal of the Coastal Ambassador program.  Without healthy habitat our local ecosystem and the wildlife and coastal communities that depend upon it would collapse.  The Cleland Island Ecological Reserve (CIER) is a jewel in the crown of wildlife habitat in Clayoquot Sound and our Coastal Ambassadors are responsible for maintaining it’s habitat.  Founded in 1971 the CIER is Canada’s oldest Ecological Reserve and home to many of Clayoquot Sound’s most iconic species of wildlife.  Utilized by shorebirds, pinnipeds, whales, salmon and other species critical to the health of Clayoquot Sound’s ecosystem, the CIER is perhaps the regions most important wildlife habitat.  Because of it’s location on the western edge of Clayoquot Sound, the CIER is exposed to an endless barrage of ocean plastics and pollution that wash in on every tide.  These pollutants threaten the integrity of the CIER and harm sensitive wildlife nesting and foraging habitat that many species of animals depend upon to survive.
+                  </p>
+                </div>
+                <div class="col"><img src="{{ modal-5img }}" class="img-fluid" alt="Responsive image"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 6 -->
+    <div class="modal fade" id="modal-6" tabindex="-1" role="dialog" aria-labelledby="modal1Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content p-4">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            6
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 7 -->
+    <div class="modal fade" id="modal-7" tabindex="-1" role="dialog" aria-labelledby="modal-7Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content p-4">
+          <div class="modal-header pb-0 pt-4">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-4">
+                  <h5 class="modal-title text-right text-uppercase pt-2 pr-3 pb-2" id="modal-7Label">Clayoquot CleanUp</h5>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-4 text-right">
+                  <p class="pt-3">
+                    Clayoquot CleanUp is a volunteer organization founded in 2017 by local residents, business owners and First Nations from within Clayoquot Sound.  Thanks to the team’s technical expertise and operational efficiency in demanding marine environments, Clayoquot CleanUp has quickly become a global leader in wildlife habitat rehabilitation and marine resource remediation within Clayoquot Sound.  The Coastal Ambassador program facilitated by Clayoquot Wilderness Resort and Clayoquot CleanUp connects individuals with meaningful opportunities for environmental stewardship in the form of wildlife habitat rehabilitation projects within Clayoquot Sound.
+                  </p>
+                </div>
+                <div class="col"><img src="{{ modal-7img }}" class="img-fluid" alt="Responsive image"></div>
               </div>
             </div>
           </div>
