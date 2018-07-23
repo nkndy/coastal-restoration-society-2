@@ -21,7 +21,7 @@ $( "#slide-text-1" ).click(function() {
 });
 
 // Create a Stripe client.
-var stripe = Stripe('	pk_live_bP1k0gZ6poakuOswW31zA5jX');
+var stripe = Stripe('pk_live_bP1k0gZ6poakuOswW31zA5jX');
 
 // Create an instance of Elements.
 var elements = stripe.elements({
